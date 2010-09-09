@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeArchitecturePreference = i386;
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 47F07EDE12197A63000247AD /* SkypeToAddressBook */;
+		activeTarget = 8D1107260486CEB800E47090 /* SkypeToAddressBook */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* SkypeToAddressBook */,
+		);
+		codeSenseManager = 47F07EF012197A6D000247AD /* Code sense */;
+		executables = (
+			47F07EDE12197A63000247AD /* SkypeToAddressBook */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					558,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					518,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 303926077;
+			PBXWorkspaceStateSaveDate = 303926077;
+		};
+		perUserProjectItems = {
+			47790733121AA28300231138 /* XDModelBookmark */ = 47790733121AA28300231138 /* XDModelBookmark */;
+			47790737121AA28300231138 /* PBXTextBookmark */ = 47790737121AA28300231138 /* PBXTextBookmark */;
+			477907E5121D438700231138 /* PBXTextBookmark */ = 477907E5121D438700231138 /* PBXTextBookmark */;
+			477907EC121D557500231138 /* PBXTextBookmark */ = 477907EC121D557500231138 /* PBXTextBookmark */;
+			4779080D121D860E00231138 /* PBXTextBookmark */ = 4779080D121D860E00231138 /* PBXTextBookmark */;
+			47790818121D8B1400231138 /* PBXTextBookmark */ = 47790818121D8B1400231138 /* PBXTextBookmark */;
+			47790843121D8E4F00231138 /* PBXTextBookmark */ = 47790843121D8E4F00231138 /* PBXTextBookmark */;
+			47790844121D8E4F00231138 /* PBXTextBookmark */ = 47790844121D8E4F00231138 /* PBXTextBookmark */;
+			47790845121D8E4F00231138 /* PBXTextBookmark */ = 47790845121D8E4F00231138 /* PBXTextBookmark */;
+			47790864121D8F6900231138 /* PBXTextBookmark */ = 47790864121D8F6900231138 /* PBXTextBookmark */;
+			47790869121EDD5E00231138 /* PBXTextBookmark */ = 47790869121EDD5E00231138 /* PBXTextBookmark */;
+			4779086A121EDD5E00231138 /* PBXTextBookmark */ = 4779086A121EDD5E00231138 /* PBXTextBookmark */;
+			4779086B121EDD5E00231138 /* PBXTextBookmark */ = 4779086B121EDD5E00231138 /* PBXTextBookmark */;
+			4779086D121EDD5E00231138 /* PBXTextBookmark */ = 4779086D121EDD5E00231138 /* PBXTextBookmark */;
+			47790882121EF60300231138 /* PBXTextBookmark */ = 47790882121EF60300231138 /* PBXTextBookmark */;
+			47790883121EF60300231138 /* PBXTextBookmark */ = 47790883121EF60300231138 /* PBXTextBookmark */;
+			47790885122F7BA100231138 /* PBXTextBookmark */ = 47790885122F7BA100231138 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 47F07EEF12197A6D000247AD /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	47790733121AA28300231138 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = 770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+	};
+	47790737121AA28300231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47790738121AA28300231138 /* NSString.h */;
+		name = "NSString.h: 292";
+		rLen = 81;
+		rLoc = 17510;
+		rType = 0;
+		vrLen = 3304;
+		vrLoc = 15664;
+	};
+	47790738121AA28300231138 /* NSString.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = NSString.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSString.h;
+		sourceTree = "<absolute>";
+	};
+	47790755121AAA9100231138 /* XSContactView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{302, 79}";
+			sepNavVisRange = "{0, 387}";
+		};
+	};
+	47790756121AAA9100231138 /* XSContactView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{520, 0}";
+			sepNavVisRange = "{0, 529}";
+		};
+	};
+	477907B4121BF4F700231138 /* XSSkype.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{242, 0}";
+			sepNavVisRange = "{0, 838}";
+		};
+	};
+	477907B5121BF4F700231138 /* XSSkype.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {850, 1833}}";
+			sepNavSelRange = "{821, 0}";
+			sepNavVisRange = "{716, 209}";
+			sepNavWindowFrame = "{{38, 70}, {1089, 782}}";
+		};
+	};
+	477907D2121C726000231138 /* XSSkypeContact.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{285, 49}";
+			sepNavVisRange = "{0, 578}";
+		};
+	};
+	477907D3121C726000231138 /* XSSkypeContact.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {861, 1131}}";
+			sepNavSelRange = "{788, 454}";
+			sepNavVisRange = "{164, 620}";
+		};
+	};
+	477907E5121D438700231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47790755121AAA9100231138 /* XSContactView.h */;
+		name = "XSContactView.h: 18";
+		rLen = 79;
+		rLoc = 302;
+		rType = 0;
+		vrLen = 387;
+		vrLoc = 0;
+	};
+	477907E9121D49F000231138 /* XSABContact.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{323, 8}";
+			sepNavVisRange = "{0, 611}";
+		};
+	};
+	477907EA121D49F000231138 /* XSABContact.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {850, 377}}";
+			sepNavSelRange = "{220, 0}";
+			sepNavVisRange = "{157, 435}";
+		};
+	};
+	477907EC121D557500231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47790756121AAA9100231138 /* XSContactView.m */;
+		name = "XSContactView.m: 26";
+		rLen = 0;
+		rLoc = 520;
+		rType = 0;
+		vrLen = 529;
+		vrLoc = 0;
+	};
+	4779080D121D860E00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* AppDelegate.m */;
+		name = "AppDelegate.m: 41";
+		rLen = 0;
+		rLoc = 1358;
+		rType = 0;
+		vrLen = 1660;
+		vrLoc = 230;
+	};
+	47790818121D8B1400231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907EA121D49F000231138 /* XSABContact.m */;
+		name = "XSABContact.m: 25";
+		rLen = 0;
+		rLoc = 706;
+		rType = 0;
+		vrLen = 699;
+		vrLoc = 0;
+	};
+	47790843121D8E4F00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907B5121BF4F700231138 /* XSSkype.m */;
+		name = "XSSkype.m: 74";
+		rLen = 84;
+		rLoc = 1325;
+		rType = 0;
+		vrLen = 1612;
+		vrLoc = 852;
+	};
+	47790844121D8E4F00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07EF512197DA0000247AD /* XSContact.m */;
+		name = "XSContact.m: 61";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 1099;
+		vrLoc = 663;
+	};
+	47790845121D8E4F00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07EF412197DA0000247AD /* XSContact.h */;
+		name = "XSContact.h: 32";
+		rLen = 0;
+		rLoc = 697;
+		rType = 0;
+		vrLen = 740;
+		vrLoc = 0;
+	};
+	47790864121D8F6900231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907D2121C726000231138 /* XSSkypeContact.h */;
+		name = "XSSkypeContact.h: 16";
+		rLen = 49;
+		rLoc = 285;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 0;
+	};
+	47790869121EDD5E00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907B4121BF4F700231138 /* XSSkype.h */;
+		name = "XSSkype.h: 12";
+		rLen = 0;
+		rLoc = 242;
+		rType = 0;
+		vrLen = 838;
+		vrLoc = 0;
+	};
+	4779086A121EDD5E00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907D3121C726000231138 /* XSSkypeContact.m */;
+		name = "XSSkypeContact.m: 19";
+		rLen = 0;
+		rLoc = 364;
+		rType = 0;
+		vrLen = 1404;
+		vrLoc = 782;
+	};
+	4779086B121EDD5E00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280B06725ACE000B614F /* AppDelegate.h */;
+		name = "AppDelegate.h: 23";
+		rLen = 15;
+		rLoc = 530;
+		rType = 0;
+		vrLen = 1066;
+		vrLoc = 0;
+	};
+	4779086D121EDD5E00231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 477907E9121D49F000231138 /* XSABContact.h */;
+		name = "XSABContact.h: 16";
+		rLen = 8;
+		rLoc = 323;
+		rType = 0;
+		vrLen = 611;
+		vrLoc = 0;
+	};
+	47790882121EF60300231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07F0612197FB0000247AD /* XSMainWindow.h */;
+		name = "XSMainWindow.h: 16";
+		rLen = 0;
+		rLoc = 405;
+		rType = 0;
+		vrLen = 651;
+		vrLoc = 0;
+	};
+	47790883121EF60300231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */;
+		name = "XSMainWindow.m: 13";
+		rLen = 0;
+		rLoc = 240;
+		rType = 0;
+		vrLen = 1177;
+		vrLoc = 3;
+	};
+	47790885122F7BA100231138 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */;
+		name = "XSMainWindow.m: 43";
+		rLen = 0;
+		rLoc = 1133;
+		rType = 0;
+		vrLen = 1243;
+		vrLoc = 306;
+	};
+	47F07EDE12197A63000247AD /* SkypeToAddressBook */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SkypeToAddressBook;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	47F07EEF12197A6D000247AD /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	47F07EF012197A6D000247AD /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	47F07EF412197DA0000247AD /* XSContact.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{697, 0}";
+			sepNavVisRange = "{0, 740}";
+		};
+	};
+	47F07EF512197DA0000247AD /* XSContact.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 1105}}";
+			sepNavSelRange = "{1174, 0}";
+			sepNavVisRange = "{663, 1099}";
+			sepNavWindowFrame = "{{15, 91}, {1089, 782}}";
+		};
+	};
+	47F07F0612197FB0000247AD /* XSMainWindow.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{405, 0}";
+			sepNavVisRange = "{0, 651}";
+		};
+	};
+	47F07F0712197FB0000247AD /* XSMainWindow.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 819}}";
+			sepNavSelRange = "{1133, 0}";
+			sepNavVisRange = "{306, 1243}";
+		};
+	};
+	770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+				UIContextForDetailArea = {
+					_indexOfSelectedPane = 0;
+					_indexOfSelectedView = 1;
+				};
+				UIContextForEntityArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnns = (
+						"ET Entity",
+						"ET Abstract",
+						"ET Class",
+					);
+					chosenTableColumnns_sortDirections = (
+						YES,
+					);
+					chosenTableColumnns_sortKeys = (
+						name,
+					);
+					chosenTableColumnns_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableWidths = (
+						103.000000,
+						22.000000,
+						64.080078,
+					);
+				};
+				UIContextForLayoutManager = {
+					detailSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {469, 220}}",
+							"{{474, 0}, {321, 220}}",
+						);
+					};
+					diagramSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {795, 220}}",
+							"{{0, 225}, {795, 377}}",
+						);
+					};
+					tableSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {214, 218}}",
+							"{{219, 0}, {248, 218}}",
+						);
+					};
+				};
+				UIContextForPropertyArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnnFRTs = (
+						"FT Fetch Request",
+						"FT Predicate",
+					);
+					chosenTableColumnnFRTs_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnFRTs_sortKeys = (
+						name,
+					);
+					chosenTableColumnnFRTs_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsAT = (
+						"AT Attribute",
+						"AT Type",
+					);
+					chosenTableColumnnsAT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsAT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsAT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsFPT = (
+						"FP FetchedProperty",
+						"FP Destination",
+						"FP Predicate",
+					);
+					chosenTableColumnnsFPT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsFPT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsFPT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsPT = (
+						"PT Property",
+						"PT Kind",
+						"PT SharedKeyOne",
+					);
+					chosenTableColumnnsPT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsPT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsPT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsRT = (
+						"RT Relationship",
+						"RT Destination",
+					);
+					chosenTableColumnnsRT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsRT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsRT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableWidthsAT = (
+						128.000000,
+						64.000000,
+					);
+					chosenTableWidthsFPT = (
+						128.000000,
+						64.000000,
+						144.764160,
+					);
+					chosenTableWidthsFRT = (
+						128.000000,
+						249.764160,
+					);
+					chosenTableWidthsPT = (
+						128.000000,
+						108.110840,
+						96.570801,
+					);
+					chosenTableWidthsRT = (
+						128.000000,
+						64.000000,
+					);
+				};
+				"xdesign model browser state key - shown/hidden" = 1;
+				"xdesign model diagram view visible rect key" = "{{-41, 0}, {780, 362}}";
+			};
+		};
+	};
+	77C8280B06725ACE000B614F /* AppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
+			sepNavSelRange = "{530, 15}";
+			sepNavVisRange = "{0, 1066}";
+		};
+	};
+	77C8280C06725ACE000B614F /* AppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {936, 3328}}";
+			sepNavSelRange = "{1293, 3}";
+			sepNavVisRange = "{646, 714}";
+		};
+	};
+	8D1107260486CEB800E47090 /* SkypeToAddressBook */ = {
+		activeExec = 0;
+		executables = (
+			47F07EDE12197A63000247AD /* SkypeToAddressBook */,
+		);
+	};
+}
