@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSImage *photo;
 @property (nonatomic, retain) NSString *name;
 
--(void) fillFromABContact:(XSABContact *) contact;
+-(void) configureFromAddressBookContact:(NSString *) uniqueId;
 -(void) removeABContact;
-
++ (id) xsContactWithAddressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context;
 @end

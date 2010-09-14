@@ -52,8 +52,19 @@
 	return self.uniqueID != NULL;
 }
 
--(void) fillFromABContact:(XSABContact *) contact {
-	self.uniqueID = contact.uniqueId;
++ (id) xsContactWithAddressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context {
+    XSContact *newItem;
+    newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
+    
+    // configure
+    if (uniqueId) {
+        [newItem configureFromAddressBookContact:uniqueId];
+    }
+    return newItem;
+}
+
+-(void) configureFromAddressBookContact:(NSString *) uniqueId {
+	self.uniqueID = uniqueId;
 	
 	// image
 	ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
@@ -63,7 +74,9 @@
 	[contactImage release];
 	
 	// name
-	self.name = [contact.fullName isEqualToString:@" "] ? self.skypeName : contact.fullName;
+	//self.name = [contact.fullName isEqualToString:@" "] ? self.skypeName : contact.fullName;
+    NSString *fullName = [XSABContact fullNameForPerson:record];
+    self.name = [fullName isEqualToString:@" "] ? self.skypeName : fullName;
 }
 
 -(void) removeABContact {

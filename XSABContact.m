@@ -19,13 +19,17 @@
 	self = [super init];
 	if (self != nil) {
 		self.uniqueId = [person uniqueId];
-		self.fullName = [NSString stringWithFormat:@"%@ %@", 
-						 [person valueForProperty:kABFirstNameProperty], 
-						 [person valueForProperty:kABLastNameProperty]];
+		self.fullName = [[self class] fullNameForPerson:person];
 		self.skypeName = [person valueForProperty:skypeProperty];
 	}
 	return self;
 }	
 
-
+#pragma mark -
+#pragma mark Class Methods
++(NSString *) fullNameForPerson:(ABPerson *)person {
+    return [NSString stringWithFormat:@"%@ %@", 
+            [person valueForProperty:kABFirstNameProperty], 
+            [person valueForProperty:kABLastNameProperty]];
+}
 @end
