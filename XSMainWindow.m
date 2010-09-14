@@ -57,16 +57,20 @@
 -(void) contactsAvailable:(NSArray *) contacts {
 	// contacts contains an array of NSString's objects with skype names
 	for (NSString *skypeName in contacts) {
-		// TODO: chicha
+
 		NSString *uniqueId = [abDictionary valueForKey:@"skypeName"];
         
         // fetch contact in Core Data
         // If it doesn't exits, create it
         // update AB contact, if so
         XSContact *xsContact = [self contactWithSkypeName:skypeName];
+        if (xsContact) {
+            xsContact.uniqueID = uniqueId;
+        }
         
-        if (!uniqueId) {
-            // skypeName does have and AddressBook contact
+        if (uniqueId && !xsContact) {
+            // create a XSContact with uniqueId data
+            
         }
 	}
     

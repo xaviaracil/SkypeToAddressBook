@@ -31,4 +31,5 @@
 
 -(void) fillFromABContact:(XSABContact *) contact;
 -(void) removeABContact;
+
 @end
