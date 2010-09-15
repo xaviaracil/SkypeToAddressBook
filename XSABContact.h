@@ -24,4 +24,5 @@
 
 -(id) initWithPerson:(ABPerson *)person skypeProperty:(NSString *)skypeProperty;
 +(NSString *) fullNameForPerson:(ABPerson *) person;
+
 @end

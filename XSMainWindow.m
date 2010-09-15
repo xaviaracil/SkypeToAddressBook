@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSDictionary *abDictionary;
 
 -(XSContact *) contactWithSkypeName:(NSString *) skypeName;
+-(void) deleteOldContacts:(NSArray *) currentContacts;
 
 @end
 
@@ -70,12 +71,15 @@
         
         if (uniqueId && !xsContact) {
             // create a XSContact with uniqueId data
-            
+            AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+            NSManagedObjectContext *moc = appDelegate.managedObjectContext;            
+            xsContact = [XSContact xsContactWithAddressBookUniqueId:uniqueId context:moc];            
         }
 	}
     
-    // fetch contacts with skype name different than contacts
-    // delete them
+    // fetch contacts with skype name different than contacts and delete them
+    [self deleteOldContacts:contacts];
+    
 }
 
 #pragma mark -
@@ -96,5 +100,16 @@
     return (!array || [array count] == 0) ? nil : [array objectAtIndex:0];
     
     // TODO: deal with error
+}
+
+-(void) deleteOldContacts:(NSArray *)currentContacts {
+    AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *moc = appDelegate.managedObjectContext;
+
+    // TODO: fetch contacts with skype name different than contacts
+    
+    // TODO: delete them
+    [moc deleteObject:<#(NSManagedObject *)object#>];
 }
 @end
