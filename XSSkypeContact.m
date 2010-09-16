@@ -9,12 +9,6 @@
 #import "XSSkypeContact.h"
 #import <AddressBook/AddressBook.h>
 
-@interface XSSkypeContact ()
-
-//-(ABPerson *) findContactWithSkypeName:(NSString *) skypeContact;
-
-@end
-
 @implementation XSSkypeContact
 
 @synthesize delegate;
@@ -27,27 +21,6 @@
 	XSSkype *skype = [[XSSkype alloc] initWithAppName:@""];	
 	[skype sendCommand:@"SEARCH FRIENDS" responder:self];	
 }
-
-
-#pragma mark -
-#pragma mark Private Methods
-/*
--(ABPerson *) findContactWithSkypeName:(NSString *) skypeContact {
-	ABAddressBook *AB = [ABAddressBook sharedAddressBook];
-	
-	ABSearchElement *skypeContactAsGiven =
-    [ABPerson searchElementForProperty:kXSSkypeProperty
-                                 label:nil
-                                   key:nil
-                                 value:skypeContact
-                            comparison:kABEqual];
-	
-	NSArray *peopleFound = [AB recordsMatchingSearchElement:skypeContactAsGiven];	
-	if ([peopleFound count] > 0) {
-		return [peopleFound objectAtIndex:0];
-	}
-	return NULL;
-}*/
 
 #pragma mark -
 #pragma mark XSSkypeDelegate methods

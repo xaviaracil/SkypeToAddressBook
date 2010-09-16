@@ -52,30 +52,6 @@
 	[super dealloc];
 }
 
-# pragma mark contacts
-/*
-- (void) fetchContacts {
-	// connect to Skype
-	if (connected == NO) {
-		NSLog(@"Not connected to skype");
-		return;
-	}
-	
-	// load contacts from Skype
-	// -> SEARCH FRIENDS
-	// <- USERS tim, joe, mike
-
-	// generate id
-	
-	// put id into call dictionary	
-	// TODO: mirar
-	XSSkypeFetchContactsResponder *action = [[XSSkypeFetchContactsResponder alloc] initWithDelegate:delegate];
-	NSString *callId = [NSString stringWithFormat:@"#%d", lastCallId++];
-	NSString *skypeCommand = [NSString stringWithFormat:@"%@ SEARCH FRIENDS", callId];
-	[calls setObject:action forKey:callId];
-	[SkypeAPI sendSkypeCommand: skypeCommand];	
-}*/
-
 -(void) sendCommand:(NSString *) command responder:(id<XSSkypeResponder>) responder {
 	NSString *callId = [NSString stringWithFormat:@"#%d", lastCallId++];
 	NSString *skypeCommand = [NSString stringWithFormat:@"%@ %@", callId, command];

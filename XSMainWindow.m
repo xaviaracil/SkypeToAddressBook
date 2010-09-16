@@ -45,11 +45,11 @@
 	[xsSkypeContacts release];
 }
 
-
 - (void) dealloc
 {
 	[skypeContacts release];
 	[contactsArrayController release];
+    [abDictionary release];
 	[super dealloc];
 }
 
@@ -107,9 +107,25 @@
     
     NSManagedObjectContext *moc = appDelegate.managedObjectContext;
 
-    // TODO: fetch contacts with skype name different than contacts
+    // fetch contacts with skype name different than contacts
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:moc];
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    [request setEntity:entityDescription];
+
+    NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL (id evaluatedObject, NSDictionary *bindings){
+        XSContact *contact = (XSContact *) evaluatedObject;
+        return [currentContacts containsObject:contact.skypeName] == NO;
+    }];
+    [request setPredicate:predicate];
     
-    // TODO: delete them
-    [moc deleteObject:<#(NSManagedObject *)object#>];
+    NSError *error;
+    NSArray *array = [moc executeFetchRequest:request error:&error];
+    
+    // TODO: deal with error
+
+    // delete them
+    [array enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
+        [moc deleteObject:object]; 
+    }];
 }
 @end
