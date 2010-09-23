@@ -12,7 +12,6 @@
 @protocol XSSkypeDelegate <NSObject>
 
 -(void) skypeDidConnect;
--(void) contactsAvailable:(NSArray *) contacts; 
 
 @end
 
@@ -37,5 +36,6 @@
 
 -(id) initWithAppName:(NSString *) name;
 -(void) sendCommand:(NSString *) command responder:(id<XSSkypeResponder>) responder;
+-(void) connect;
 
 @end

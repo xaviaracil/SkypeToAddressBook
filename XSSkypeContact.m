@@ -11,19 +11,32 @@
 
 @implementation XSSkypeContact
 
-@synthesize delegate;
+@synthesize skype, delegate;
 
 -(void) requestContacts {
 	// load contacts from Skype
 	// -> SEARCH FRIENDS
 	// <- USERS tim, joe, mike
+	XSSkype *skypeProxy = [[XSSkype alloc] initWithAppName:@"SkypeToAddressBook"];	
+    skypeProxy.delegate = self;
+    self.skype = skypeProxy;
+    [skype connect];
+    [skypeProxy release];
+}
 
-	XSSkype *skype = [[XSSkype alloc] initWithAppName:@""];	
-	[skype sendCommand:@"SEARCH FRIENDS" responder:self];	
+- (void)dealloc {
+    [skype release];
+    [delegate release];
+    [super dealloc];
+}
+#pragma mark -
+#pragma mark XSSkypeDelegate methods
+-(void) skypeDidConnect {
+	[skype sendCommand:@"SEARCH FRIENDS" responder:self];	    
 }
 
 #pragma mark -
-#pragma mark XSSkypeDelegate methods
+#pragma mark XSSkypeResponder methods
 -(void) response:(NSString *) response {
 	NSMutableArray *result = [NSMutableArray array];
 	
@@ -34,18 +47,20 @@
 	if ([theScanner isAtEnd] == NO) {
 		[theScanner scanString:kSkypeUsers intoString:NULL];
 		
-		NSMutableString *skypeContact;
+		NSString *skypeContact;
 		while ([theScanner isAtEnd] == NO) {
 			[theScanner scanUpToCharactersFromSet:characterSet intoString:&skypeContact];
-			
+			            
 			// remove last ","
-			if ([skypeContact hasSuffix:@","]) {				
-				[skypeContact deleteCharactersInRange:NSMakeRange([skypeContact length] -1, 1)];
-			}
-			[result addObject:skypeContact];
+			if ([skypeContact hasSuffix:@","]) {
+				NSMutableString *mutableString = [NSMutableString stringWithString:skypeContact];
+				[mutableString deleteCharactersInRange:NSMakeRange([mutableString length] -1, 1)];
+                [result addObject:mutableString];
+			} else {
+                [result addObject:skypeContact];
+            }
 
 		}
-		[skypeContact release]; // TODO: necessary???
 		
 	}
 	

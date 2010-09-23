@@ -16,7 +16,8 @@
 
 +(NSImage *) defaultPhoto;
 +(NSImage *) defaultPhotoForUsersNotInAddressBook;
-
+-(void) setTransientProperties;
+-(void) configureWithSkypeName:(NSString *) skypeName addressBookContact:(NSString *) uniqueId;
 @end
 
 #pragma mark -
@@ -26,18 +27,10 @@
 
 @dynamic skypeName;
 @dynamic uniqueID;
+@dynamic editing;
 
 @synthesize photo;
 @synthesize name;
-
-- (id) init
-{
-	self = [super init];
-	if (self != nil) {
-		self.photo = [[self class] defaultPhotoForUsersNotInAddressBook];
-	}
-	return self;
-}
 
 - (void) dealloc {
 	[photo release];
@@ -52,31 +45,19 @@
 	return self.uniqueID != NULL;
 }
 
-+ (id) xsContactWithAddressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context {
++ (id) xsContactWithSkypeName:(NSString *) skypeName addressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context {
     XSContact *newItem;
     newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:context];
     
     // configure
-    if (uniqueId) {
-        [newItem configureFromAddressBookContact:uniqueId];
-    }
+    [newItem configureWithSkypeName:skypeName addressBookContact:uniqueId];
+
     return newItem;
 }
 
 -(void) configureFromAddressBookContact:(NSString *) uniqueId {
-	self.uniqueID = uniqueId;
-	
-	// image
-	ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
-	ABPerson *record = (ABPerson *) [addressBook recordForUniqueId:self.uniqueID];
-	NSImage *contactImage = [[NSImage alloc] initWithData: [record imageData]];
-	self.photo = contactImage ? contactImage : [[self class] defaultPhoto];
-	[contactImage release];
-	
-	// name
-	//self.name = [contact.fullName isEqualToString:@" "] ? self.skypeName : contact.fullName;
-    NSString *fullName = [XSABContact fullNameForPerson:record];
-    self.name = [fullName isEqualToString:@" "] ? self.skypeName : fullName;
+	self.uniqueID = uniqueId;	
+    [self setTransientProperties];
 }
 
 -(void) removeABContact {
@@ -87,6 +68,42 @@
 
 #pragma mark -
 #pragma mark Private Methods
+-(void) awakeFromFetch {
+    [super awakeFromFetch];    
+    [self setTransientProperties];
+}
+
+-(void) setTransientProperties {
+    NSImage *contactImage = NULL;
+    NSString *fullName = NULL;
+
+	if (self.uniqueID) {
+        ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
+        ABPerson *record = (ABPerson *) [addressBook recordForUniqueId:self.uniqueID];    
+        contactImage = [[[NSImage alloc] initWithData: [record imageData]] autorelease];
+        fullName = [XSABContact fullNameForPerson:record];
+    } else {
+        contactImage = [[self class] defaultPhoto];
+        fullName = @" ";
+    }
+
+	// image
+    [self willChangeValueForKey:@"photo"];
+    self.photo = contactImage ? contactImage : [[self class] defaultPhoto];
+    [self didChangeValueForKey:@"photo"];
+	
+	// name
+    [self willChangeValueForKey:@"name"];
+    self.name = [fullName isEqualToString:@" "] ? self.skypeName : fullName;
+    [self didChangeValueForKey:@"name"];
+}
+
+-(void) configureWithSkypeName:(NSString *) aSkypeName addressBookContact:(NSString *) uniqueId {
+    self.skypeName = aSkypeName;
+    self.uniqueID = uniqueId;
+    [self setTransientProperties];
+}
+
 +(NSImage *) defaultPhoto {
 	return [NSImage imageNamed:NSImageNameUser];
 }

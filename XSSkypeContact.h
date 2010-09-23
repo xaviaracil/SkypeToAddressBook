@@ -17,10 +17,12 @@
 
 @end
 
-@interface XSSkypeContact : NSObject<XSSkypeResponder> {
+@interface XSSkypeContact : NSObject<XSSkypeResponder, XSSkypeDelegate> {
+    XSSkype *skype;
 	id<XSSkypeContactDelegate> delegate;	
 }
 
+@property(nonatomic, retain) XSSkype *skype;
 @property(nonatomic, retain) id<XSSkypeContactDelegate> delegate;
 
 -(void) requestContacts;

@@ -35,12 +35,11 @@
 	NSArray *values = [appDelegate.abContactsArray valueForKey:@"uniqueId"];
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	self.abDictionary = dictionary;
-	[keys release]; // TODO: necessary??
-	[values release]; // TODO: necessary??
 	
 	XSSkypeContact *xsSkypeContacts = [[XSSkypeContact alloc] init];
 	self.skypeContacts = xsSkypeContacts;
-	self.loading = YES;		
+	self.loading = YES;
+    skypeContacts.delegate = self;
 	[skypeContacts requestContacts];
 	[xsSkypeContacts release];
 }
@@ -67,19 +66,17 @@
         XSContact *xsContact = [self contactWithSkypeName:skypeName];
         if (xsContact) {
             xsContact.uniqueID = uniqueId;
-        }
-        
-        if (uniqueId && !xsContact) {
+        } else {
             // create a XSContact with uniqueId data
             AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
             NSManagedObjectContext *moc = appDelegate.managedObjectContext;            
-            xsContact = [XSContact xsContactWithAddressBookUniqueId:uniqueId context:moc];            
-        }
+            xsContact = [XSContact xsContactWithSkypeName:skypeName addressBookUniqueId:uniqueId context:moc];
+        }        
 	}
     
     // fetch contacts with skype name different than contacts and delete them
     [self deleteOldContacts:contacts];
-    
+    self.loading = NO;
 }
 
 #pragma mark -
@@ -113,8 +110,7 @@
     [request setEntity:entityDescription];
 
     NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL (id evaluatedObject, NSDictionary *bindings){
-        XSContact *contact = (XSContact *) evaluatedObject;
-        return [currentContacts containsObject:contact.skypeName] == NO;
+        return [currentContacts containsObject:[evaluatedObject valueForKey:@"skypeName"]] == NO;
     }];
     [request setPredicate:predicate];
     

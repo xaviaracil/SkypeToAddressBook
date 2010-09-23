@@ -8,12 +8,6 @@
 
 #import "XSSkype.h"
 
-@interface XSSkype ()
-
--(void) connect;
-
-@end
-
 @implementation XSSkype
 
 @synthesize appName, delegate, connected;
@@ -27,7 +21,7 @@
 	
 	// setting delegate
 	[SkypeAPI setSkypeDelegate:self];
-		
+
 	// connecting
 	[SkypeAPI connect];
 }
@@ -53,10 +47,12 @@
 }
 
 -(void) sendCommand:(NSString *) command responder:(id<XSSkypeResponder>) responder {
+    if (connected == NO) return;
+    
 	NSString *callId = [NSString stringWithFormat:@"#%d", lastCallId++];
 	NSString *skypeCommand = [NSString stringWithFormat:@"%@ %@", callId, command];
 	[calls setObject:responder forKey:callId];
-	[SkypeAPI sendSkypeCommand: skypeCommand];	
+    [SkypeAPI sendSkypeCommand: skypeCommand];	
 }
 
 
@@ -97,7 +93,6 @@
 		}
 	} else {
 	}
-
 }
 
 // This method is called after Skype has been launched.
