@@ -16,14 +16,14 @@
 	XSContact *contact = self.representedObject;
 	
 	if (contact.isInAddressBook) {
-		[contact removeABContact];
+        contact.uniqueID = NULL;
 	} else {
 		self.editing = YES;
 	}
-	NSLog(@"Editing: %d", self.editing);
 }
 
 -(void) confirmContact:(id) sender {
+    // TODO chicha
 }
 
 @end

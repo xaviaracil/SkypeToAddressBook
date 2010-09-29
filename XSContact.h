@@ -18,8 +18,6 @@
 	// non-modeled attributes
 	NSImage *photo;
 	NSString *name;
-    BOOL editing;
-    // TODO: update transient properties when changing uniqueId
 }
 
 // attributes
@@ -30,8 +28,6 @@
 @property (nonatomic, readonly) BOOL isInAddressBook;
 @property (nonatomic, retain) NSImage *photo;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, assign) BOOL editing;
 
--(void) removeABContact;
 + (id) xsContactWithSkypeName:(NSString *) skypeName addressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context;
 @end

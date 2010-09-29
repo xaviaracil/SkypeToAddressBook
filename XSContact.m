@@ -27,7 +27,6 @@
 
 @dynamic skypeName;
 @dynamic uniqueID;
-@dynamic editing;
 
 @synthesize photo;
 @synthesize name;
@@ -36,6 +35,17 @@
 	[photo release];
 	[name release];
 	[super dealloc];
+}
+
+- (void) setUniqueID:(NSString *)newUniqueID {
+    if(uniqueID != newUniqueID) {
+        [self willChangeValueForKey:@"uniqueID"];
+        [uniqueID release];
+        uniqueID = [newUniqueID retain];
+        [self didChangeValueForKey:@"uniqueID"];
+        
+        [self setTransientProperties];        
+    }
 }
 
 #pragma mark -
@@ -53,17 +63,6 @@
     [newItem configureWithSkypeName:skypeName addressBookContact:uniqueId];
 
     return newItem;
-}
-
--(void) configureFromAddressBookContact:(NSString *) uniqueId {
-	self.uniqueID = uniqueId;	
-    [self setTransientProperties];
-}
-
--(void) removeABContact {
-	self.uniqueID = NULL;
-	self.photo = [[self class] defaultPhotoForUsersNotInAddressBook];
-	self.name = self.skypeName;
 }
 
 #pragma mark -
