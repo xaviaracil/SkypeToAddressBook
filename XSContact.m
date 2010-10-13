@@ -20,13 +20,16 @@
 -(void) configureWithSkypeName:(NSString *) skypeName addressBookContact:(NSString *) uniqueId;
 @end
 
+@interface XSContact (PrimitiveAccessors)
+- (void)setPrimitiveUniqueID:(NSString *)newUniqueID;
+@end
+
 #pragma mark -
 #pragma mark Public implementation
 
 @implementation XSContact
 
-@dynamic skypeName;
-@dynamic uniqueID;
+@dynamic skypeName, uniqueID;
 
 @synthesize photo;
 @synthesize name;
@@ -38,14 +41,10 @@
 }
 
 - (void) setUniqueID:(NSString *)newUniqueID {
-    if(uniqueID != newUniqueID) {
-        [self willChangeValueForKey:@"uniqueID"];
-        [uniqueID release];
-        uniqueID = [newUniqueID retain];
-        [self didChangeValueForKey:@"uniqueID"];
-        
-        [self setTransientProperties];        
-    }
+    [self willChangeValueForKey:@"uniqueID"];
+    [self setPrimitiveUniqueID:newUniqueID];
+    [self didChangeValueForKey:@"uniqueID"];
+    [self setTransientProperties];
 }
 
 #pragma mark -

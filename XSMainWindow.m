@@ -16,6 +16,7 @@
 
 -(XSContact *) contactWithSkypeName:(NSString *) skypeName;
 -(void) deleteOldContacts:(NSArray *) currentContacts;
+-(void) save;
 
 @end
 
@@ -76,6 +77,11 @@
     
     // fetch contacts with skype name different than contacts and delete them
     [self deleteOldContacts:contacts];
+    
+    // save context
+    [self save];
+
+    
     self.loading = NO;
 }
 
@@ -89,11 +95,13 @@
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
     [request setEntity:entityDescription];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"skypeName == %@", skypeName];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"skypeName", skypeName];
     [request setPredicate:predicate];
     
     NSError *error;
     NSArray *array = [moc executeFetchRequest:request error:&error];
+    
+    // Maybe try to determine cause of error and recover first.
     return (!array || [array count] == 0) ? nil : [array objectAtIndex:0];
     
     // TODO: deal with error
@@ -123,5 +131,16 @@
     [array enumerateObjectsUsingBlock:^(id object, NSUInteger index, BOOL *stop) {
         [moc deleteObject:object]; 
     }];
+}
+
+-(void) save {
+    AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *moc = appDelegate.managedObjectContext;
+    NSError *error;
+    if (![moc save:&error]) {
+        NSAlert *alert = [NSAlert alertWithError:error];
+        [alert runModal];
+    }    
 }
 @end

@@ -11,18 +11,14 @@
 @class XSABContact;
 
 @interface XSContact : NSManagedObject {
-	// attributes
-	NSString *skypeName;
-	NSString *uniqueID;
-	
 	// non-modeled attributes
 	NSImage *photo;
 	NSString *name;
 }
 
 // attributes
-@property (nonatomic, retain) NSString *skypeName;
-@property (nonatomic, retain) NSString *uniqueID;
+@property (retain) NSString *skypeName;
+@property (retain) NSString *uniqueID;
 
 // non-modeled attributes
 @property (nonatomic, readonly) BOOL isInAddressBook;

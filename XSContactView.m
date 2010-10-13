@@ -9,6 +9,12 @@
 #import "XSContactView.h"
 #import "XSContact.h"
 
+@interface XSContactView()
+-(void) displayAlert:(XSContact *) contact;
+-(void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode
+       contextInfo:(void *)contextInfo;
+@end
+
 @implementation XSContactView
 @synthesize editing;
 
@@ -16,7 +22,8 @@
 	XSContact *contact = self.representedObject;
 	
 	if (contact.isInAddressBook) {
-        contact.uniqueID = NULL;
+        // display a confirmation alert
+        [self displayAlert:contact];
 	} else {
 		self.editing = YES;
 	}
@@ -24,6 +31,25 @@
 
 -(void) confirmContact:(id) sender {
     // TODO chicha
+}
+
+#pragma mark -
+#pragma mark Private Methods
+-(void) displayAlert:(XSContact *) contact {
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setMessageText:[NSString stringWithFormat:@"Disconnect contact %@ from skype user %@?", contact.name, contact.skypeName]];
+    [alert setInformativeText:@"Disconnected contacts cannot be restored."];
+    [alert setAlertStyle:NSWarningAlertStyle];
+
+    [alert beginSheetModalForWindow:self.view.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+}
+
+- (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode
+        contextInfo:(void *)contextInfo {
+	XSContact *contact = self.representedObject;
+    contact.uniqueID = NULL;
 }
 
 @end
