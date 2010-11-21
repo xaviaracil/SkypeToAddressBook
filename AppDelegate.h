@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "XSContact.h"
 
 @class XSMainWindow;
 
@@ -35,5 +36,5 @@
 @property (nonatomic, retain) NSArray *abContactsArray;
 
 - (IBAction)saveAction:sender;
-
+- (void) showPeoplePicker:(XSContact *)contact;
 @end

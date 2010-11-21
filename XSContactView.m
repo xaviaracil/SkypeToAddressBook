@@ -8,6 +8,7 @@
 
 #import "XSContactView.h"
 #import "XSContact.h"
+#import "AppDelegate.h"
 
 @interface XSContactView()
 -(void) displayAlert:(XSContact *) contact;
@@ -26,11 +27,9 @@
         [self displayAlert:contact];
 	} else {
 		self.editing = YES;
+        AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+        [appDelegate showPeoplePicker:self.representedObject];
 	}
-}
-
--(void) confirmContact:(id) sender {
-    // TODO chicha
 }
 
 #pragma mark -
@@ -49,7 +48,9 @@
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode
         contextInfo:(void *)contextInfo {
 	XSContact *contact = self.representedObject;
-    contact.uniqueID = NULL;
+    contact.uniqueID = NULL;    
+    
+
 }
 
 @end

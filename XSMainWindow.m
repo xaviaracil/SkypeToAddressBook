@@ -7,6 +7,7 @@
 //
 
 #import "XSMainWindow.h"
+#import <AddressBook/AddressBook.h>
 #import "AppDelegate.h"
 #import "XSContact.h"
 
@@ -16,8 +17,7 @@
 
 -(XSContact *) contactWithSkypeName:(NSString *) skypeName;
 -(void) deleteOldContacts:(NSArray *) currentContacts;
--(void) save;
-
+-(void) recordChanged:(NSNotification*)notification;
 @end
 
 @implementation XSMainWindow
@@ -25,6 +25,11 @@
 @synthesize contactsArrayController;
 @synthesize loading;
 @synthesize skypeContacts;
+@synthesize peoplePickerView;
+@synthesize peoplePicker;
+@synthesize contentView;
+@synthesize peoplePickerImageView;
+
 // private ivars
 @synthesize abDictionary;
 
@@ -36,6 +41,7 @@
 	NSArray *values = [appDelegate.abContactsArray valueForKey:@"uniqueId"];
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	self.abDictionary = dictionary;
+    NSLog(@"AbDictionary: %@", self.abDictionary);
 	
 	XSSkypeContact *xsSkypeContacts = [[XSSkypeContact alloc] init];
 	self.skypeContacts = xsSkypeContacts;
@@ -43,10 +49,50 @@
     skypeContacts.delegate = self;
 	[skypeContacts requestContacts];
 	[xsSkypeContacts release];
+    
+    // people picker
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    
+    // Set up a responder for one of the four available notifications,
+    // in this case to tell us when the selection in the people picker
+    // has changed.
+    [center addObserver:self
+               selector:@selector(recordChanged:)
+                   name:ABPeoplePickerNameSelectionDidChangeNotification
+                 object:peoplePicker];
+    
+}
+
+- (void) showPeoplePicker:(XSContact *) contact {   
+    [self.contactsArrayController setSelectedObjects:[NSArray arrayWithObject:contact]];
+    self.peoplePickerView.frame = self.contentView.bounds;
+    [self.contentView addSubview:self.peoplePickerView];
+}
+
+- (void)setContact:(id)sender {
+    NSArray *array = [peoplePicker selectedRecords];
+    NSAssert([array count] == 1,
+             @"Picker returned multiple selected records");
+    ABPerson *person = [array objectAtIndex:0];
+
+    XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
+    contact.uniqueID = [person uniqueId];
+
+    [self.peoplePickerView removeFromSuperview];
+}
+
+- (void)cancelContact:(id)sender {
+    [self.peoplePickerView removeFromSuperview];
 }
 
 - (void) dealloc
 {
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self];
+    
+    [peoplePickerView release];    
+    [peoplePicker release];
+    [contentView release];
 	[skypeContacts release];
 	[contactsArrayController release];
     [abDictionary release];
@@ -59,7 +105,7 @@
 	// contacts contains an array of NSString's objects with skype names
 	for (NSString *skypeName in contacts) {
 
-		NSString *uniqueId = [abDictionary valueForKey:@"skypeName"];
+		NSString *uniqueId = [abDictionary valueForKey:skypeName];
         
         // fetch contact in Core Data
         // If it doesn't exits, create it
@@ -78,9 +124,6 @@
     // fetch contacts with skype name different than contacts and delete them
     [self deleteOldContacts:contacts];
     
-    // save context
-    [self save];
-
     
     self.loading = NO;
 }
@@ -133,14 +176,15 @@
     }];
 }
 
--(void) save {
-    AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+
+-(void) recordChanged:(NSNotification*)notification {
+    NSArray *array = [peoplePicker selectedRecords];
+    NSAssert([array count] == 1,
+             @"Picker returned multiple selected records");
+    ABPerson *person = [array objectAtIndex:0];
     
-    NSManagedObjectContext *moc = appDelegate.managedObjectContext;
-    NSError *error;
-    if (![moc save:&error]) {
-        NSAlert *alert = [NSAlert alertWithError:error];
-        [alert runModal];
-    }    
+    NSImage *contactImage = [[NSImage alloc] initWithData: [person imageData]];
+    [peoplePickerImageView setImage:contactImage];
+    [contactImage release];
 }
 @end

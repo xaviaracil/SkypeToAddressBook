@@ -18,6 +18,10 @@
 @synthesize mainWindowController;
 @synthesize abContactsArray;
 
+- (void) showPeoplePicker:(XSContact *)contact {
+    XSMainWindow *windowController = self.mainWindowController;
+    [windowController showPeoplePicker:contact];
+}
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
 }

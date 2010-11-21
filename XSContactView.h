@@ -16,6 +16,5 @@
 @property (nonatomic, assign) BOOL editing;
 
 -(IBAction) removeContact:(id) sender;
--(IBAction) confirmContact:(id) sender;
 
 @end

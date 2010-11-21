@@ -41,8 +41,24 @@
 }
 
 - (void) setUniqueID:(NSString *)newUniqueID {
-    [self willChangeValueForKey:@"uniqueID"];
+    [self willChangeValueForKey:@"uniqueID"];    
+    
+    // update address book record
+    ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
+    if(self.uniqueID) {
+        ABPerson *record = (ABPerson *) [addressBook recordForUniqueId:self.uniqueID];    
+        [record removeValueForProperty:kXSSkypeProperty];
+    }
+
     [self setPrimitiveUniqueID:newUniqueID];
+    
+    if(newUniqueID) {
+        ABPerson *record = (ABPerson *) [addressBook recordForUniqueId:self.uniqueID];
+        [record setValue:self.skypeName forProperty:kXSSkypeProperty];
+    }
+    
+    [addressBook save];
+    
     [self didChangeValueForKey:@"uniqueID"];
     [self setTransientProperties];
 }
@@ -81,7 +97,7 @@
         contactImage = [[[NSImage alloc] initWithData: [record imageData]] autorelease];
         fullName = [XSABContact fullNameForPerson:record];
     } else {
-        contactImage = [[self class] defaultPhoto];
+        contactImage = [[self class] defaultPhotoForUsersNotInAddressBook];
         fullName = @" ";
     }
 
