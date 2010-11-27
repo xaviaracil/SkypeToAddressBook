@@ -27,8 +27,11 @@
         [self displayAlert:contact];
 	} else {
 		self.editing = YES;
-        AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
-        [appDelegate showPeoplePicker:self.representedObject];
+        AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];        
+        //NSRect frame = [[self view] frame];
+        //NSRect baseFrame = [[self view] convertRectToBase:frame];
+        [appDelegate showPeoplePicker:self.representedObject fromView:sender];
+        //[appDelegate showPeoplePicker:self.representedObject initialFrame:baseFrame];
 	}
 }
 
@@ -47,10 +50,10 @@
 
 - (void)alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode
         contextInfo:(void *)contextInfo {
-	XSContact *contact = self.representedObject;
-    contact.uniqueID = NULL;    
-    
-
+    if (returnCode == NSAlertFirstButtonReturn) {
+        XSContact *contact = self.representedObject;
+        contact.uniqueID = NULL;    
+    }
 }
 
 @end

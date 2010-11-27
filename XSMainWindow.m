@@ -10,6 +10,7 @@
 #import <AddressBook/AddressBook.h>
 #import "AppDelegate.h"
 #import "XSContact.h"
+#import "XSMainWindow-animation.h"
 
 @interface XSMainWindow () 
 
@@ -29,9 +30,12 @@
 @synthesize peoplePicker;
 @synthesize contentView;
 @synthesize peoplePickerImageView;
+@synthesize scrollView;
 
 // private ivars
 @synthesize abDictionary;
+@synthesize animationArray;
+@synthesize selectedContactImageView;
 
 - (void)windowDidLoad {
 	// create a dictionary from 
@@ -63,10 +67,12 @@
     
 }
 
-- (void) showPeoplePicker:(XSContact *) contact {   
-    [self.contactsArrayController setSelectedObjects:[NSArray arrayWithObject:contact]];
-    self.peoplePickerView.frame = self.contentView.bounds;
-    [self.contentView addSubview:self.peoplePickerView];
+- (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view {
+    [self.contactsArrayController setSelectedObjects:[NSArray arrayWithObject:contact]];    
+    NSRect viewFrame = [view frame];    
+    NSRect frame = [contentView convertRect:viewFrame fromView:[view superview]];    
+    [self animateShowPeoplePicker:frame];
+    [peoplePickerImageView setImage:[NSImage imageNamed:@"PersonSquare"]];
 }
 
 - (void)setContact:(id)sender {
@@ -78,11 +84,12 @@
     XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
     contact.uniqueID = [person uniqueId];
 
-    [self.peoplePickerView removeFromSuperview];
+    [self animateHidePeoplePicker];
 }
 
 - (void)cancelContact:(id)sender {
-    [self.peoplePickerView removeFromSuperview];
+    [scrollView setHidden:NO];
+    [peoplePickerView setHidden:YES];
 }
 
 - (void) dealloc

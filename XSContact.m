@@ -15,7 +15,6 @@
 @interface XSContact () 
 
 +(NSImage *) defaultPhoto;
-+(NSImage *) defaultPhotoForUsersNotInAddressBook;
 -(void) setTransientProperties;
 -(void) configureWithSkypeName:(NSString *) skypeName addressBookContact:(NSString *) uniqueId;
 @end
@@ -61,6 +60,10 @@
     
     [self didChangeValueForKey:@"uniqueID"];
     [self setTransientProperties];
+}
+
++(NSImage *) defaultPhotoForUsersNotInAddressBook {
+	return [NSImage imageNamed:@"PersonSquare"];
 }
 
 #pragma mark -
@@ -120,9 +123,5 @@
 
 +(NSImage *) defaultPhoto {
 	return [NSImage imageNamed:NSImageNameUser];
-}
-
-+(NSImage *) defaultPhotoForUsersNotInAddressBook {
-	return [NSImage imageNamed:@"PersonSquare"];
 }
 @end

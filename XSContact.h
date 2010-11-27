@@ -26,4 +26,6 @@
 @property (nonatomic, retain) NSString *name;
 
 + (id) xsContactWithSkypeName:(NSString *) skypeName addressBookUniqueId:(NSString *) uniqueId context:(NSManagedObjectContext *) context;
++(NSImage *) defaultPhotoForUsersNotInAddressBook;
+
 @end

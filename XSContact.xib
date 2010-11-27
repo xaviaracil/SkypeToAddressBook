@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1222</string>
-		<string key="IBDocument.AppKitVersion">1038.29</string>
+		<string key="IBDocument.SystemVersion">10H574</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1246</string>
+		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<string>NSCustomView</string>
@@ -49,7 +49,6 @@
 						<string key="NSFrame">{{17, 10}, {91, 17}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<int key="NSViewLayerContentsRedrawPolicy">2</int>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="644888641">
@@ -59,7 +58,7 @@
 							<object class="NSFont" key="NSSupport" id="605444956">
 								<string key="NSName">LucidaGrande</string>
 								<double key="NSSize">13</double>
-								<int key="NSfFlags">1040</int>
+								<int key="NSfFlags">1044</int>
 							</object>
 							<reference key="NSControlView" ref="831429009"/>
 							<object class="NSColor" key="NSBackgroundColor">
@@ -106,7 +105,7 @@
 							<string key="NSContents"/>
 							<reference key="NSSupport" ref="605444956"/>
 							<reference key="NSControlView" ref="729480861"/>
-							<int key="NSButtonFlags">-2046017281</int>
+							<int key="NSButtonFlags">135020799</int>
 							<int key="NSButtonFlags2">70</int>
 							<string key="NSAlternateContents"/>
 							<string key="NSKeyEquivalent"/>
@@ -125,7 +124,7 @@
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<object class="NSArray" key="connectionRecords">
+			<object class="NSMutableArray" key="connectionRecords">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -330,11 +329,11 @@
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
-		<object class="NSDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1060" key="NS.object.0"/>
 		</object>
-		<object class="NSDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
 			<integer value="3000" key="NS.object.0"/>
 		</object>

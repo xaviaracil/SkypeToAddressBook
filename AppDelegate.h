@@ -36,5 +36,7 @@
 @property (nonatomic, retain) NSArray *abContactsArray;
 
 - (IBAction)saveAction:sender;
-- (void) showPeoplePicker:(XSContact *)contact;
+//- (void) showPeoplePicker:(XSContact *)contact;
+//- (void) showPeoplePicker:(XSContact *)contact initialFrame:(NSRect) frame;
+- (void) showPeoplePicker:(XSContact *)contact fromView:(NSView *) view;
 @end

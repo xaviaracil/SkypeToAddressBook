@@ -18,10 +18,21 @@
 @synthesize mainWindowController;
 @synthesize abContactsArray;
 
+/*
 - (void) showPeoplePicker:(XSContact *)contact {
     XSMainWindow *windowController = self.mainWindowController;
     [windowController showPeoplePicker:contact];
 }
+- (void) showPeoplePicker:(XSContact *)contact initialFrame:(NSRect) frame {
+    XSMainWindow *windowController = self.mainWindowController;
+    [windowController showPeoplePicker:contact initialFrame:frame];    
+}
+*/
+- (void) showPeoplePicker:(XSContact *)contact fromView:(NSView *) view {
+    XSMainWindow *windowController = self.mainWindowController;
+    [windowController showPeoplePicker:contact fromView:view];    
+}
+
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
 }
