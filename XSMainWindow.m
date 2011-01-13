@@ -31,6 +31,7 @@
 @synthesize contentView;
 @synthesize peoplePickerImageView;
 @synthesize scrollView;
+@synthesize sortDescriptors;
 
 // private ivars
 @synthesize abDictionary;
@@ -39,7 +40,7 @@
 
 - (void)windowDidLoad {
 	// create a dictionary from 
-	AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+	AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
 	
 	NSArray *keys = [appDelegate.abContactsArray valueForKey:@"skypeName"];
 	NSArray *values = [appDelegate.abContactsArray valueForKey:@"uniqueId"];
@@ -65,6 +66,10 @@
                    name:ABPeoplePickerNameSelectionDidChangeNotification
                  object:peoplePicker];
     
+    // sort descriptors
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    NSArray *sortArray = [NSArray arrayWithObject:sort];
+    self.sortDescriptors = sortArray;
 }
 
 - (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view {
@@ -81,6 +86,7 @@
              @"Picker returned multiple selected records");
     ABPerson *person = [array objectAtIndex:0];
 
+    // TODO do the update when the animations ends!!!
     XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
     contact.uniqueID = [person uniqueId];
 
@@ -122,15 +128,15 @@
             xsContact.uniqueID = uniqueId;
         } else {
             // create a XSContact with uniqueId data
-            AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+            AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
             NSManagedObjectContext *moc = appDelegate.managedObjectContext;            
             xsContact = [XSContact xsContactWithSkypeName:skypeName addressBookUniqueId:uniqueId context:moc];
         }        
 	}
     
     // fetch contacts with skype name different than contacts and delete them
-    [self deleteOldContacts:contacts];
-    
+    // TODO optimize
+    [self deleteOldContacts:contacts];    
     
     self.loading = NO;
 }
@@ -138,7 +144,7 @@
 #pragma mark -
 #pragma mark Private Methods
 -(XSContact *) contactWithSkypeName:(NSString *)skypeName {
-    AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
     
     NSManagedObjectContext *moc = appDelegate.managedObjectContext;
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:moc];
@@ -158,7 +164,7 @@
 }
 
 -(void) deleteOldContacts:(NSArray *)currentContacts {
-    AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];
+    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
     
     NSManagedObjectContext *moc = appDelegate.managedObjectContext;
 

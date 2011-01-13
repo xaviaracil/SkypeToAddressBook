@@ -105,7 +105,8 @@
     NSManagedObjectModel *mom = [self managedObjectModel];
     if (!mom) {
         NSAssert(NO, @"Managed object model is nil");
-        NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
+        NSString *cmd = NSStringFromSelector(_cmd);
+        NSLog(@"%@:%s No model to generate a store from", [self class], cmd);
         return nil;
     }
 
@@ -181,7 +182,8 @@
     NSError *error = nil;
     
     if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%s unable to commit editing before saving", [self class], _cmd);
+        NSString *cmd = NSStringFromSelector(_cmd);
+        NSLog(@"%@:%s unable to commit editing before saving", [self class], cmd);
     }
 
     if (![[self managedObjectContext] save:&error]) {
@@ -201,7 +203,8 @@
     if (!managedObjectContext) return NSTerminateNow;
 
     if (![managedObjectContext commitEditing]) {
-        NSLog(@"%@:%s unable to commit editing to terminate", [self class], _cmd);
+        NSString *cmd = NSStringFromSelector(_cmd);
+        NSLog(@"%@:%s unable to commit editing to terminate", [self class], cmd);
         return NSTerminateCancel;
     }
 

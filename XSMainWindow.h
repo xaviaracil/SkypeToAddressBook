@@ -22,6 +22,8 @@
     NSImageView *peoplePickerImageView;
     NSScrollView *scrollView;
     
+    NSArray *sortDescriptors;
+    
     // animating
     NSArray *animationArray;
     NSRect currentContactFrame;
@@ -36,6 +38,7 @@
 @property (retain) IBOutlet NSView *contentView;
 @property (retain) IBOutlet NSImageView *peoplePickerImageView;
 @property (retain) IBOutlet NSScrollView *scrollView;;
+@property (retain) NSArray *sortDescriptors;
 // animation
 @property (nonatomic, retain) NSArray *animationArray;
 @property (nonatomic, retain) NSImageView *selectedContactImageView;
