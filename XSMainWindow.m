@@ -19,6 +19,8 @@
 -(XSContact *) contactWithSkypeName:(NSString *) skypeName;
 -(void) deleteOldContacts:(NSArray *) currentContacts;
 -(void) recordChanged:(NSNotification*)notification;
+-(void) setContactAnimationDidEnd;
+
 @end
 
 @implementation XSMainWindow
@@ -54,7 +56,14 @@
     skypeContacts.delegate = self;
 	[skypeContacts requestContacts];
 	[xsSkypeContacts release];
-    
+        
+    // sort descriptors
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    NSArray *sortArray = [NSArray arrayWithObject:sort];
+    self.sortDescriptors = sortArray;
+}
+
+- (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view {
     // people picker
     NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
     
@@ -65,31 +74,22 @@
                selector:@selector(recordChanged:)
                    name:ABPeoplePickerNameSelectionDidChangeNotification
                  object:peoplePicker];
-    
-    // sort descriptors
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-    NSArray *sortArray = [NSArray arrayWithObject:sort];
-    self.sortDescriptors = sortArray;
-}
 
-- (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view {
+    
     [self.contactsArrayController setSelectedObjects:[NSArray arrayWithObject:contact]];    
     NSRect viewFrame = [view frame];    
     NSRect frame = [contentView convertRect:viewFrame fromView:[view superview]];    
+    animationDidEndSelector = NULL;
     [self animateShowPeoplePicker:frame];
     [peoplePickerImageView setImage:[NSImage imageNamed:@"PersonSquare"]];
 }
 
 - (void)setContact:(id)sender {
-    NSArray *array = [peoplePicker selectedRecords];
-    NSAssert([array count] == 1,
-             @"Picker returned multiple selected records");
-    ABPerson *person = [array objectAtIndex:0];
-
-    // TODO do the update when the animations ends!!!
-    XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
-    contact.uniqueID = [person uniqueId];
-
+    // remove notification
+    NSNotificationCenter* center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self name:ABPeoplePickerNameSelectionDidChangeNotification object:peoplePicker];
+    
+    animationDidEndSelector = @selector(setContactAnimationDidEnd);
     [self animateHidePeoplePicker];
 }
 
@@ -197,7 +197,19 @@
     ABPerson *person = [array objectAtIndex:0];
     
     NSImage *contactImage = [[NSImage alloc] initWithData: [person imageData]];
+    if (!contactImage)
+        contactImage = [NSImage imageNamed:NSImageNameUser];
     [peoplePickerImageView setImage:contactImage];
     [contactImage release];
+}
+
+-(void) setContactAnimationDidEnd {
+    NSArray *array = [peoplePicker selectedRecords];
+    NSAssert([array count] == 1,
+             @"Picker returned multiple selected records");
+    ABPerson *person = [array objectAtIndex:0];
+    
+    XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
+    contact.uniqueID = [person uniqueId];
 }
 @end

@@ -362,6 +362,11 @@
         }
         // release all array
         self.animationArray = nil;
+        
+        // call method
+        if ([self respondsToSelector:animationDidEndSelector]) {
+            [self performSelector:animationDidEndSelector];
+        }
     }
 }
 @end

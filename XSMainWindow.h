@@ -28,6 +28,7 @@
     NSArray *animationArray;
     NSRect currentContactFrame;
     NSImageView *selectedContactImageView;
+    SEL animationDidEndSelector;
 }
 
 @property (nonatomic, retain) IBOutlet NSArrayController *contactsArrayController;
@@ -50,5 +51,4 @@
 - (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view;
 - (IBAction)setContact:(id)sender;
 - (IBAction)cancelContact:(id)sender;
-
 @end
