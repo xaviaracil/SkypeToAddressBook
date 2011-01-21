@@ -50,7 +50,7 @@
 	NSArray *people = [adressBook people];
 	NSMutableArray *abContacts = [NSMutableArray arrayWithCapacity:[people count]];
 	for (ABPerson *person in people) {
-		[abContacts addObject:[[XSABContact alloc] initWithPerson:person skypeProperty:kXSSkypeProperty]];
+		[abContacts addObject:[[[XSABContact alloc] initWithPerson:person skypeProperty:kXSSkypeProperty] autorelease]];
 	}
 	
 	self.abContactsArray = abContacts;

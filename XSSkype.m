@@ -69,17 +69,17 @@
 	if ([aNotificationString characterAtIndex:0] == '#') {
 		NSScanner *theScanner = [NSScanner scannerWithString:aNotificationString];
 		NSCharacterSet *characterSet = [NSCharacterSet whitespaceCharacterSet];
-		NSString *callId;
-		NSString *response;
+		NSString *callId = nil;
+		NSString *response = nil;
 		if ([theScanner isAtEnd] == NO) {
 			[theScanner scanUpToCharactersFromSet:characterSet intoString:&callId];
 			response = [[theScanner string] substringFromIndex:[theScanner scanLocation]];
 		}
 		
-		id responder = [calls objectForKey:callId];
-		if ([responder conformsToProtocol:@protocol(XSSkypeResponder)]) {
-			[responder response:response];
-		}
+        id responder = [calls objectForKey:callId];
+        if ([responder conformsToProtocol:@protocol(XSSkypeResponder)]) {
+            [responder response:response];
+        }
 	}	
 }
 

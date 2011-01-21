@@ -23,6 +23,7 @@
     NSScrollView *scrollView;
     
     NSArray *sortDescriptors;
+    //    NSDictionary *skypeNamesDictionary;
     
     // animating
     NSArray *animationArray;

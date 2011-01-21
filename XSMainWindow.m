@@ -114,53 +114,66 @@
 
 #pragma mark -
 #pragma mark XSSkypeContactDelegate Methods
--(void) contactsAvailable:(NSArray *) contacts {
+-(void) contactsAvailable:(NSArray *) contacts { 
+    NSLog(@"contactsAvailable: Start");
+    
 	// contacts contains an array of NSString's objects with skype names
 	for (NSString *skypeName in contacts) {
 
+        NSLog(@"Processing skypeName %@: Start", skypeName);
 		NSString *uniqueId = [abDictionary valueForKey:skypeName];
         
         // fetch contact in Core Data
         // If it doesn't exits, create it
         // update AB contact, if so
+        NSLog(@"Looking for contact with skypeName %@: Start", skypeName);
         XSContact *xsContact = [self contactWithSkypeName:skypeName];
+        NSLog(@"Looking for contact with skypeName %@: End", skypeName);
         if (xsContact) {
             xsContact.uniqueID = uniqueId;
         } else {
             // create a XSContact with uniqueId data
+            NSLog(@"Creating a contact with skypeName %@: Start", skypeName);
             AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
             NSManagedObjectContext *moc = appDelegate.managedObjectContext;            
-            xsContact = [XSContact xsContactWithSkypeName:skypeName addressBookUniqueId:uniqueId context:moc];
+            [XSContact xsContactWithSkypeName:skypeName addressBookUniqueId:uniqueId context:moc];
+            NSLog(@"Creating a contact with skypeName %@: End", skypeName);
         }        
+        NSLog(@"Processing skypeName %@: End", skypeName);
 	}
-    
+        
     // fetch contacts with skype name different than contacts and delete them
     // TODO optimize
     [self deleteOldContacts:contacts];    
     
+    // release delegate method
+    self.skypeContacts.delegate = nil;        
     self.loading = NO;
+    //    [skypeNamesDictionary release];
+    NSLog(@"contactsAvailable: End");
 }
 
 #pragma mark -
 #pragma mark Private Methods
 -(XSContact *) contactWithSkypeName:(NSString *)skypeName {
-    AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
-    
-    NSManagedObjectContext *moc = appDelegate.managedObjectContext;
-    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Contact" inManagedObjectContext:moc];
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-    [request setEntity:entityDescription];
-    
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K == %@", @"skypeName", skypeName];
-    [request setPredicate:predicate];
-    
-    NSError *error;
-    NSArray *array = [moc executeFetchRequest:request error:&error];
-    
-    // Maybe try to determine cause of error and recover first.
-    return (!array || [array count] == 0) ? nil : [array objectAtIndex:0];
-    
-    // TODO: deal with error
+    /*
+    if (!skypeNamesDictionary) {        
+        NSLog(@"Creating skypeNamesDictionary: Begin");
+        NSArray *objects = [self.contactsArrayController arrangedObjects];
+        NSArray *keys = [objects valueForKey:@"skypeName"];
+        skypeNamesDictionary = [[NSDictionary dictionaryWithObjects:objects forKeys:keys] retain];
+        NSLog(@"skypeNamesDictionary: %@", skypeNamesDictionary);
+        NSLog(@"Creating skypeNamesDictionary: End");
+    }
+
+    return [skypeNamesDictionary valueForKey:skypeName];
+     */
+    // TODO fetch all contacts in a NSDictionary and look at that dictionary
+    // This should improve fetch time donw to #contacts
+    NSArray *contacts = [self.contactsArrayController arrangedObjects];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.skypeName == %@", skypeName];
+    NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
+    return ([filteredArray count] == 0) ? nil : [filteredArray objectAtIndex:0];
 }
 
 -(void) deleteOldContacts:(NSArray *)currentContacts {
@@ -198,7 +211,7 @@
     
     NSImage *contactImage = [[NSImage alloc] initWithData: [person imageData]];
     if (!contactImage)
-        contactImage = [NSImage imageNamed:NSImageNameUser];
+        contactImage = [[NSImage imageNamed:NSImageNameUser] retain];
     [peoplePickerImageView setImage:contactImage];
     [contactImage release];
 }
