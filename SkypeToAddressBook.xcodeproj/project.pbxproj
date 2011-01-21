@@ -8,20 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
-		4763D13D1239772200581E6B /* Skype.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 477907A6121BF47100231138 /* Skype.framework */; };
+		470FB736129D1BCD00D7BB70 /* XSMainWindow-animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FB735129D1BCD00D7BB70 /* XSMainWindow-animation.m */; };
+		476D440012998D2C009F58CC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476D43FF12998D2C009F58CC /* Quartz.framework */; };
 		4779070C1219D35800231138 /* XSContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4779070B1219D35800231138 /* XSContact.xib */; };
 		4779071B121AA25500231138 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4779071A121AA25500231138 /* AddressBook.framework */; };
 		47790752121AA60300231138 /* PersonSquare.tif in Resources */ = {isa = PBXBuildFile; fileRef = 47790751121AA60300231138 /* PersonSquare.tif */; };
 		47790757121AAA9100231138 /* XSContactView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47790756121AAA9100231138 /* XSContactView.m */; };
-		47790795121BF3EE00231138 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47790794121BF3EE00231138 /* Sparkle.framework */; };
-		477907A7121BF47100231138 /* Skype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477907A6121BF47100231138 /* Skype.framework */; };
-		477907AB121BF4A000231138 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 47790794121BF3EE00231138 /* Sparkle.framework */; };
 		477907B6121BF4F700231138 /* XSSkype.m in Sources */ = {isa = PBXBuildFile; fileRef = 477907B5121BF4F700231138 /* XSSkype.m */; };
 		477907D4121C726000231138 /* XSSkypeContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 477907D3121C726000231138 /* XSSkypeContact.m */; };
 		477907D6121D389E00231138 /* SkypeToAddressBook.icns in Resources */ = {isa = PBXBuildFile; fileRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */; };
-		477907E2121D433300231138 /* face-confirm-N.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 477907E0121D433300231138 /* face-confirm-N.tiff */; };
-		477907E3121D433300231138 /* face-confirm-P.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 477907E1121D433300231138 /* face-confirm-P.tiff */; };
 		477907EB121D49F000231138 /* XSABContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 477907EA121D49F000231138 /* XSABContact.m */; };
+		479E44B9124BE6A90026A2EE /* Skype.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 477907A6121BF47100231138 /* Skype.framework */; };
+		479E44BA124BE6B00026A2EE /* Skype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 477907A6121BF47100231138 /* Skype.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		47F07EF612197DA0000247AD /* XSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F07EF512197DA0000247AD /* XSContact.m */; };
 		47F07F0812197FB0000247AD /* XSMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */; };
 		47F07F0A1219801A000247AD /* XSMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47F07F091219801A000247AD /* XSMainWindow.xib */; };
@@ -39,8 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				477907AB121BF4A000231138 /* Sparkle.framework in Copy Frameworks */,
-				4763D13D1239772200581E6B /* Skype.framework in Copy Frameworks */,
+				479E44B9124BE6A90026A2EE /* Skype.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,20 +52,20 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SkypeToAddressBook_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkypeToAddressBook_Prefix.pch; sourceTree = "<group>"; };
+		470FB734129D1BCD00D7BB70 /* XSMainWindow-animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XSMainWindow-animation.h"; sourceTree = "<group>"; };
+		470FB735129D1BCD00D7BB70 /* XSMainWindow-animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XSMainWindow-animation.m"; sourceTree = "<group>"; };
+		476D43FF12998D2C009F58CC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		4779070B1219D35800231138 /* XSContact.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSContact.xib; sourceTree = "<group>"; };
 		4779071A121AA25500231138 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		47790751121AA60300231138 /* PersonSquare.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = PersonSquare.tif; sourceTree = "<group>"; };
 		47790755121AAA9100231138 /* XSContactView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSContactView.h; sourceTree = "<group>"; };
 		47790756121AAA9100231138 /* XSContactView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSContactView.m; sourceTree = "<group>"; };
-		47790794121BF3EE00231138 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		477907A6121BF47100231138 /* Skype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Skype.framework; path = "/Users/xavi/Documents/Cocoa/Skype API for Mac/Skype.framework"; sourceTree = "<absolute>"; };
 		477907B4121BF4F700231138 /* XSSkype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSkype.h; sourceTree = "<group>"; };
 		477907B5121BF4F700231138 /* XSSkype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSSkype.m; sourceTree = "<group>"; };
 		477907D2121C726000231138 /* XSSkypeContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSSkypeContact.h; sourceTree = "<group>"; };
 		477907D3121C726000231138 /* XSSkypeContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSSkypeContact.m; sourceTree = "<group>"; };
 		477907D5121D389E00231138 /* SkypeToAddressBook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkypeToAddressBook.icns; sourceTree = "<group>"; };
-		477907E0121D433300231138 /* face-confirm-N.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "face-confirm-N.tiff"; sourceTree = "<group>"; };
-		477907E1121D433300231138 /* face-confirm-P.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "face-confirm-P.tiff"; sourceTree = "<group>"; };
 		477907E9121D49F000231138 /* XSABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSABContact.h; sourceTree = "<group>"; };
 		477907EA121D49F000231138 /* XSABContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSABContact.m; sourceTree = "<group>"; };
 		47F07EF412197DA0000247AD /* XSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSContact.h; sourceTree = "<group>"; };
@@ -89,10 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476D440012998D2C009F58CC /* Quartz.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				4779071B121AA25500231138 /* AddressBook.framework in Frameworks */,
-				47790795121BF3EE00231138 /* Sparkle.framework in Frameworks */,
-				477907A7121BF47100231138 /* Skype.framework in Frameworks */,
+				479E44BA124BE6B00026A2EE /* Skype.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +107,8 @@
 				77C8280C06725ACE000B614F /* AppDelegate.m */,
 				47F07F0612197FB0000247AD /* XSMainWindow.h */,
 				47F07F0712197FB0000247AD /* XSMainWindow.m */,
+				470FB734129D1BCD00D7BB70 /* XSMainWindow-animation.h */,
+				470FB735129D1BCD00D7BB70 /* XSMainWindow-animation.m */,
 				47790755121AAA9100231138 /* XSContactView.h */,
 				47790756121AAA9100231138 /* XSContactView.m */,
 			);
@@ -120,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				477907A6121BF47100231138 /* Skype.framework */,
-				47790794121BF3EE00231138 /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -129,6 +127,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				476D43FF12998D2C009F58CC /* Quartz.framework */,
 				4779071A121AA25500231138 /* AddressBook.framework */,
 				77C82804067257F0000B614F /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -170,8 +169,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				477907E0121D433300231138 /* face-confirm-N.tiff */,
-				477907E1121D433300231138 /* face-confirm-P.tiff */,
 				477907D5121D389E00231138 /* SkypeToAddressBook.icns */,
 				47790751121AA60300231138 /* PersonSquare.tif */,
 				8D1107310486CEB800E47090 /* SkypeToAddressBook-Info.plist */,
@@ -247,6 +244,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Xavi Aracil Diaz";
+			};
 			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "SkypeToAddressBook" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
@@ -277,8 +277,6 @@
 				4779070C1219D35800231138 /* XSContact.xib in Resources */,
 				47790752121AA60300231138 /* PersonSquare.tif in Resources */,
 				477907D6121D389E00231138 /* SkypeToAddressBook.icns in Resources */,
-				477907E2121D433300231138 /* face-confirm-N.tiff in Resources */,
-				477907E3121D433300231138 /* face-confirm-P.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +296,7 @@
 				477907B6121BF4F700231138 /* XSSkype.m in Sources */,
 				477907D4121C726000231138 /* XSSkypeContact.m in Sources */,
 				477907EB121D49F000231138 /* XSABContact.m in Sources */,
+				470FB736129D1BCD00D7BB70 /* XSMainWindow-animation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +325,8 @@
 		26FC0A850875C7B200E6366F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "~/xaracSoft/Applications/SkypeToAddressBook/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,6 +350,8 @@
 		26FC0A860875C7B200E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Xavi Aracil";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,11 +386,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

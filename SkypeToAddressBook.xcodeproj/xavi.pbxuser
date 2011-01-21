@@ -1,8 +1,15 @@
 // !$*UTF8*$!
 {
+	089C165DFE840E0CC02AAC07 /* English */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {736, 401}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 44}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = i386;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 47F07EDE12197A63000247AD /* SkypeToAddressBook */;
 		activeTarget = 8D1107260486CEB800E47090 /* SkypeToAddressBook */;
 		addToTargets = (
@@ -57,36 +64,118 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 303926077;
-			PBXWorkspaceStateSaveDate = 303926077;
+			PBXPerProjectTemplateStateSaveDate = 317338483;
+			PBXWorkspaceStateSaveDate = 317338483;
 		};
 		perUserProjectItems = {
-			47790733121AA28300231138 /* XDModelBookmark */ = 47790733121AA28300231138 /* XDModelBookmark */;
+			474A12B6123982A500FC0E45 /* XDModelBookmark */ = 474A12B6123982A500FC0E45 /* XDModelBookmark */;
+			474A12B7123982A500FC0E45 /* PBXTextBookmark */ = 474A12B7123982A500FC0E45 /* PBXTextBookmark */;
+			474A12B8123982A500FC0E45 /* PBXTextBookmark */ = 474A12B8123982A500FC0E45 /* PBXTextBookmark */;
+			474A12B9123982A500FC0E45 /* PBXTextBookmark */ = 474A12B9123982A500FC0E45 /* PBXTextBookmark */;
+			474A12BA123982A500FC0E45 /* PBXTextBookmark */ = 474A12BA123982A500FC0E45 /* PBXTextBookmark */;
+			474E042712EA373600609650 /* PBXBookmark */ = 474E042712EA373600609650 /* PBXBookmark */;
+			474E044C12EA3A8500609650 /* PBXBookmark */ = 474E044C12EA3A8500609650 /* PBXBookmark */;
+			4753D61112EA2A1C00D03CB9 /* PBXTextBookmark */ = 4753D61112EA2A1C00D03CB9 /* PBXTextBookmark */;
+			4753D61212EA2A1C00D03CB9 /* PBXTextBookmark */ = 4753D61212EA2A1C00D03CB9 /* PBXTextBookmark */;
+			4753D61312EA2A1C00D03CB9 /* PlistBookmark */ = 4753D61312EA2A1C00D03CB9 /* PlistBookmark */;
 			47790737121AA28300231138 /* PBXTextBookmark */ = 47790737121AA28300231138 /* PBXTextBookmark */;
 			477907E5121D438700231138 /* PBXTextBookmark */ = 477907E5121D438700231138 /* PBXTextBookmark */;
 			477907EC121D557500231138 /* PBXTextBookmark */ = 477907EC121D557500231138 /* PBXTextBookmark */;
-			4779080D121D860E00231138 /* PBXTextBookmark */ = 4779080D121D860E00231138 /* PBXTextBookmark */;
 			47790818121D8B1400231138 /* PBXTextBookmark */ = 47790818121D8B1400231138 /* PBXTextBookmark */;
 			47790843121D8E4F00231138 /* PBXTextBookmark */ = 47790843121D8E4F00231138 /* PBXTextBookmark */;
-			47790844121D8E4F00231138 /* PBXTextBookmark */ = 47790844121D8E4F00231138 /* PBXTextBookmark */;
-			47790845121D8E4F00231138 /* PBXTextBookmark */ = 47790845121D8E4F00231138 /* PBXTextBookmark */;
 			47790864121D8F6900231138 /* PBXTextBookmark */ = 47790864121D8F6900231138 /* PBXTextBookmark */;
 			47790869121EDD5E00231138 /* PBXTextBookmark */ = 47790869121EDD5E00231138 /* PBXTextBookmark */;
 			4779086A121EDD5E00231138 /* PBXTextBookmark */ = 4779086A121EDD5E00231138 /* PBXTextBookmark */;
-			4779086B121EDD5E00231138 /* PBXTextBookmark */ = 4779086B121EDD5E00231138 /* PBXTextBookmark */;
 			4779086D121EDD5E00231138 /* PBXTextBookmark */ = 4779086D121EDD5E00231138 /* PBXTextBookmark */;
-			47790882121EF60300231138 /* PBXTextBookmark */ = 47790882121EF60300231138 /* PBXTextBookmark */;
-			47790883121EF60300231138 /* PBXTextBookmark */ = 47790883121EF60300231138 /* PBXTextBookmark */;
-			47790885122F7BA100231138 /* PBXTextBookmark */ = 47790885122F7BA100231138 /* PBXTextBookmark */;
+			477E9C8B123F8F4700BDDE77 /* PBXTextBookmark */ = 477E9C8B123F8F4700BDDE77 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 47F07EEF12197A6D000247AD /* Source Control */;
 		userBuildSettings = {
 		};
 	};
-	47790733121AA28300231138 /* XDModelBookmark */ = {
+	474A12B6123982A500FC0E45 /* XDModelBookmark */ = {
 		isa = XDModelBookmark;
 		fRef = 770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */;
 		fallbackIsa = PBXBookmark;
+	};
+	474A12B7123982A500FC0E45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07EF512197DA0000247AD /* XSContact.m */;
+		name = "XSContact.m: 61";
+		rLen = 0;
+		rLoc = 1174;
+		rType = 0;
+		vrLen = 757;
+		vrLoc = 0;
+	};
+	474A12B8123982A500FC0E45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07EF412197DA0000247AD /* XSContact.h */;
+		name = "XSContact.h: 17";
+		rLen = 0;
+		rLoc = 305;
+		rType = 0;
+		vrLen = 740;
+		vrLoc = 0;
+	};
+	474A12B9123982A500FC0E45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280B06725ACE000B614F /* AppDelegate.h */;
+		name = "AppDelegate.h: 19";
+		rLen = 0;
+		rLoc = 413;
+		rType = 0;
+		vrLen = 1066;
+		vrLoc = 0;
+	};
+	474A12BA123982A500FC0E45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* AppDelegate.m */;
+		name = "AppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 1358;
+		rType = 0;
+		vrLen = 1539;
+		vrLoc = 0;
+	};
+	474E042712EA373600609650 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */;
+	};
+	474E044C12EA3A8500609650 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */;
+	};
+	4753D61112EA2A1C00D03CB9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */;
+		name = "XSMainWindow.m: 54";
+		rLen = 0;
+		rLoc = 1545;
+		rType = 0;
+		vrLen = 1279;
+		vrLoc = 1217;
+	};
+	4753D61212EA2A1C00D03CB9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 089C165DFE840E0CC02AAC07 /* English */;
+		name = "InfoPlist.strings: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 44;
+		vrLoc = 0;
+	};
+	4753D61312EA2A1C00D03CB9 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* SkypeToAddressBook-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/xavi/xaracSoft/Applications/SkypeToAddressBook/SkypeToAddressBook-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775808;
 	};
 	47790737121AA28300231138 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -182,16 +271,6 @@
 		vrLen = 529;
 		vrLoc = 0;
 	};
-	4779080D121D860E00231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* AppDelegate.m */;
-		name = "AppDelegate.m: 41";
-		rLen = 0;
-		rLoc = 1358;
-		rType = 0;
-		vrLen = 1660;
-		vrLoc = 230;
-	};
 	47790818121D8B1400231138 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 477907EA121D49F000231138 /* XSABContact.m */;
@@ -211,26 +290,6 @@
 		rType = 0;
 		vrLen = 1612;
 		vrLoc = 852;
-	};
-	47790844121D8E4F00231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 47F07EF512197DA0000247AD /* XSContact.m */;
-		name = "XSContact.m: 61";
-		rLen = 0;
-		rLoc = 1174;
-		rType = 0;
-		vrLen = 1099;
-		vrLoc = 663;
-	};
-	47790845121D8E4F00231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 47F07EF412197DA0000247AD /* XSContact.h */;
-		name = "XSContact.h: 32";
-		rLen = 0;
-		rLoc = 697;
-		rType = 0;
-		vrLen = 740;
-		vrLoc = 0;
 	};
 	47790864121D8F6900231138 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -262,16 +321,6 @@
 		vrLen = 1404;
 		vrLoc = 782;
 	};
-	4779086B121EDD5E00231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280B06725ACE000B614F /* AppDelegate.h */;
-		name = "AppDelegate.h: 23";
-		rLen = 15;
-		rLoc = 530;
-		rType = 0;
-		vrLen = 1066;
-		vrLoc = 0;
-	};
 	4779086D121EDD5E00231138 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 477907E9121D49F000231138 /* XSABContact.h */;
@@ -282,7 +331,7 @@
 		vrLen = 611;
 		vrLoc = 0;
 	};
-	47790882121EF60300231138 /* PBXTextBookmark */ = {
+	477E9C8B123F8F4700BDDE77 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 47F07F0612197FB0000247AD /* XSMainWindow.h */;
 		name = "XSMainWindow.h: 16";
@@ -291,26 +340,6 @@
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 0;
-	};
-	47790883121EF60300231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */;
-		name = "XSMainWindow.m: 13";
-		rLen = 0;
-		rLoc = 240;
-		rType = 0;
-		vrLen = 1177;
-		vrLoc = 3;
-	};
-	47790885122F7BA100231138 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */;
-		name = "XSMainWindow.m: 43";
-		rLen = 0;
-		rLoc = 1133;
-		rType = 0;
-		vrLen = 1243;
-		vrLoc = 306;
 	};
 	47F07EDE12197A63000247AD /* SkypeToAddressBook */ = {
 		isa = PBXExecutable;
@@ -359,7 +388,7 @@
 	47F07EF412197DA0000247AD /* XSContact.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
-			sepNavSelRange = "{697, 0}";
+			sepNavSelRange = "{305, 0}";
 			sepNavVisRange = "{0, 740}";
 		};
 	};
@@ -367,7 +396,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {736, 1105}}";
 			sepNavSelRange = "{1174, 0}";
-			sepNavVisRange = "{663, 1099}";
+			sepNavVisRange = "{0, 757}";
 			sepNavWindowFrame = "{{15, 91}, {1089, 782}}";
 		};
 	};
@@ -380,9 +409,9 @@
 	};
 	47F07F0712197FB0000247AD /* XSMainWindow.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {736, 819}}";
-			sepNavSelRange = "{1133, 0}";
-			sepNavVisRange = "{306, 1243}";
+			sepNavIntBoundsRect = "{{0, 0}, {1027, 3081}}";
+			sepNavSelRange = "{1545, 0}";
+			sepNavVisRange = "{1217, 1279}";
 		};
 	};
 	770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */ = {
@@ -421,8 +450,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {469, 220}}",
-							"{{474, 0}, {321, 220}}",
+							"{{0, 0}, {469, 218}}",
+							"{{474, 0}, {321, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -546,15 +575,15 @@
 	77C8280B06725ACE000B614F /* AppDelegate.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {736, 587}}";
-			sepNavSelRange = "{530, 15}";
+			sepNavSelRange = "{413, 0}";
 			sepNavVisRange = "{0, 1066}";
 		};
 	};
 	77C8280C06725ACE000B614F /* AppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {936, 3328}}";
-			sepNavSelRange = "{1293, 3}";
-			sepNavVisRange = "{646, 714}";
+			sepNavIntBoundsRect = "{{0, 0}, {936, 3341}}";
+			sepNavSelRange = "{1358, 0}";
+			sepNavVisRange = "{0, 1539}";
 		};
 	};
 	8D1107260486CEB800E47090 /* SkypeToAddressBook */ = {
@@ -562,5 +591,10 @@
 		executables = (
 			47F07EDE12197A63000247AD /* SkypeToAddressBook */,
 		);
+	};
+	8D1107310486CEB800E47090 /* SkypeToAddressBook-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 91}, {1089, 782}}";
+		};
 	};
 }
