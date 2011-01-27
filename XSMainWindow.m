@@ -168,8 +168,9 @@
 
     return [skypeNamesDictionary valueForKey:skypeName];
      */
+
     // TODO fetch all contacts in a NSDictionary and look at that dictionary
-    // This should improve fetch time donw to #contacts
+    // This should improve fetch time down to #contacts
     NSArray *contacts = [self.contactsArrayController arrangedObjects];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.skypeName == %@", skypeName];
     NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];

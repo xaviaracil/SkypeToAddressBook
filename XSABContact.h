@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-#define kXSSkypeProperty @"com.xaracSoft.SkypeToAddressBook.skypeName"
+#define kXSOldSkypeProperty @"com.xaracSoft.SkypeToAddressBook.skypeName"
+#define kXSSkypeProperty @"com.xadSolutions.SkypeToAddressBook.skypeName"
 
 @class ABPerson;
 

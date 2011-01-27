@@ -46,12 +46,30 @@
 	}
 
 	// Load contacts from addressBook
-	ABAddressBook *adressBook = [ABAddressBook sharedAddressBook];
-	NSArray *people = [adressBook people];
+	ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
+	NSArray *people = [addressBook people];
 	NSMutableArray *abContacts = [NSMutableArray arrayWithCapacity:[people count]];
-	for (ABPerson *person in people) {
-		[abContacts addObject:[[[XSABContact alloc] initWithPerson:person skypeProperty:kXSSkypeProperty] autorelease]];
+
+    BOOL doSaveAddressBook = NO;
+	for (ABPerson *person in people) {        
+        if ([person valueForProperty:kXSSkypeProperty]) {
+            [abContacts addObject:[[[XSABContact alloc] initWithPerson:person skypeProperty:kXSSkypeProperty] autorelease]];
+        } else  {
+            NSString *oldValue = [person valueForProperty:kXSOldSkypeProperty];
+            if(oldValue) {
+                //  migrate kXSOldSkypeProperty o kXSSkypeProperty
+                [person setValue:oldValue forProperty:kXSSkypeProperty];
+                [person removeValueForProperty:kXSOldSkypeProperty];
+                doSaveAddressBook = YES;
+                [abContacts addObject:[[[XSABContact alloc] initWithPerson:person skypeProperty:kXSSkypeProperty] autorelease]];                                
+            }
+        }
 	}
+    
+    // saving addressBook, if modified
+    if(doSaveAddressBook) {
+        [addressBook save];
+    }
 	
 	self.abContactsArray = abContacts;
 	[abContacts release];
