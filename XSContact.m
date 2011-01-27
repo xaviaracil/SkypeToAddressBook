@@ -56,7 +56,6 @@
         [record setValue:self.skypeName forProperty:kXSSkypeProperty];
     }
     
-    [addressBook save];
     
     [self didChangeValueForKey:@"uniqueID"];
     [self setTransientProperties];

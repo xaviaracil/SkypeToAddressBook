@@ -47,7 +47,7 @@
                                                                arrayWithObjects:animPropertiesDict, nil]];
     
     // Set some additional attributes for the animation.
-    [theAnim setDuration:1.0];    // One second
+    [theAnim setDuration:0.5];    // Half second
     [theAnim setAnimationCurve:NSAnimationEaseIn];
     
     return theAnim;    
@@ -153,7 +153,7 @@
                                                                arrayWithObjects:animPropertiesDict, nil]];
     
     // Set some additional attributes for the animation.
-    [theAnim setDuration:0.5];    // Half second
+    [theAnim setDuration:0.25];    // Quarter second
     [theAnim setAnimationCurve:NSAnimationEaseIn];
     
     return theAnim;
@@ -183,7 +183,7 @@
                                                                arrayWithObjects:animPropertiesDict, nil]];
     
     // Set some additional attributes for the animation.
-    [theAnim setDuration:1.0];    // One second
+    [theAnim setDuration:0.5];    // Half second
     [theAnim setAnimationCurve:NSAnimationEaseIn];
         
     return theAnim;

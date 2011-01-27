@@ -9,6 +9,7 @@
 #import "XSContactView.h"
 #import "XSContact.h"
 #import "AppDelegate.h"
+#import <AddressBook/AddressBook.h>
 
 @interface XSContactView()
 -(void) displayAlert:(XSContact *) contact;
@@ -28,10 +29,7 @@
 	} else {
 		self.editing = YES;
         AppDelegate *appDelegate = [[NSApplication sharedApplication] delegate];        
-        //NSRect frame = [[self view] frame];
-        //NSRect baseFrame = [[self view] convertRectToBase:frame];
         [appDelegate showPeoplePicker:self.representedObject fromView:sender];
-        //[appDelegate showPeoplePicker:self.representedObject initialFrame:baseFrame];
 	}
 }
 
@@ -52,7 +50,10 @@
         contextInfo:(void *)contextInfo {
     if (returnCode == NSAlertFirstButtonReturn) {
         XSContact *contact = self.representedObject;
-        contact.uniqueID = NULL;    
+        contact.uniqueID = NULL;   
+
+        // save AddressBook changes
+        [[ABAddressBook sharedAddressBook] save];
     }
 }
 

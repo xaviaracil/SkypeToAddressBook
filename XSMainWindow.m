@@ -141,7 +141,10 @@
         }        
         NSLog(@"Processing skypeName %@: End", skypeName);
 	}
-        
+     
+    // save AddressBook changes
+    [[ABAddressBook sharedAddressBook] save];
+    
     // fetch contacts with skype name different than contacts and delete them
     // TODO optimize
     [self deleteOldContacts:contacts];    
@@ -225,5 +228,8 @@
     
     XSContact *contact = [[contactsArrayController selectedObjects] objectAtIndex:0];
     contact.uniqueID = [person uniqueId];
+
+    // save AddressBook changes
+    [[ABAddressBook sharedAddressBook] save];
 }
 @end
