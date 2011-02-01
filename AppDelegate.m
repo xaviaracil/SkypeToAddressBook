@@ -33,6 +33,10 @@
     [windowController showPeoplePicker:contact fromView:view];    
 }
 
+- (IBAction)openWebsite:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.xadsolutions.com/products/skypetoaddressbook/"]];
+}
+
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
 }

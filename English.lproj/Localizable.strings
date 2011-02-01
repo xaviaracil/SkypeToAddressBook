@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  SkypeToAddressBook
+
+  Created by Xavi Aracil on 01/02/11.
+  Copyright 2011 Xavi Aracil Diaz. All rights reserved.
+*/
+
+/* Contact deletion confirmation message*/
+"OK" = "OK";
+"Cancel" = "Cancel";
+"delete message" = "Disconnect contact %@ from skype user %@?";
+"Disconnected contacts cannot be restored." = "Disconnected contacts cannot be restored.";

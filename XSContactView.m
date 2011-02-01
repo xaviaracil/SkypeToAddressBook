@@ -36,11 +36,11 @@
 #pragma mark -
 #pragma mark Private Methods
 -(void) displayAlert:(XSContact *) contact {
-    NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
-    [alert setMessageText:[NSString stringWithFormat:@"Disconnect contact %@ from skype user %@?", contact.name, contact.skypeName]];
-    [alert setInformativeText:@"Disconnected contacts cannot be restored."];
+    NSAlert *alert = [[[NSAlert alloc] init] autorelease];    
+    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK")];
+    [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel")];
+    [alert setMessageText:[NSString stringWithFormat:NSLocalizedString(@"delete message", @"Delete message with two params"), contact.name, contact.skypeName]];
+    [alert setInformativeText:NSLocalizedString(@"Disconnected contacts cannot be restored.", @"Disconnected contacts cannot be restored.")];
     [alert setAlertStyle:NSWarningAlertStyle];
 
     [alert beginSheetModalForWindow:self.view.window modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];

@@ -39,4 +39,5 @@
 //- (void) showPeoplePicker:(XSContact *)contact;
 //- (void) showPeoplePicker:(XSContact *)contact initialFrame:(NSRect) frame;
 - (void) showPeoplePicker:(XSContact *)contact fromView:(NSView *) view;
+- (IBAction)openWebsite:(id)sender;
 @end

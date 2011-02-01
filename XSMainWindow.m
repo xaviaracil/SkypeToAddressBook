@@ -48,7 +48,6 @@
 	NSArray *values = [appDelegate.abContactsArray valueForKey:@"uniqueId"];
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	self.abDictionary = dictionary;
-    NSLog(@"AbDictionary: %@", self.abDictionary);
 	
 	XSSkypeContact *xsSkypeContacts = [[XSSkypeContact alloc] init];
 	self.skypeContacts = xsSkypeContacts;
@@ -115,31 +114,24 @@
 #pragma mark -
 #pragma mark XSSkypeContactDelegate Methods
 -(void) contactsAvailable:(NSArray *) contacts { 
-    NSLog(@"contactsAvailable: Start");
     
 	// contacts contains an array of NSString's objects with skype names
 	for (NSString *skypeName in contacts) {
 
-        NSLog(@"Processing skypeName %@: Start", skypeName);
 		NSString *uniqueId = [abDictionary valueForKey:skypeName];
         
         // fetch contact in Core Data
         // If it doesn't exits, create it
         // update AB contact, if so
-        NSLog(@"Looking for contact with skypeName %@: Start", skypeName);
         XSContact *xsContact = [self contactWithSkypeName:skypeName];
-        NSLog(@"Looking for contact with skypeName %@: End", skypeName);
         if (xsContact) {
             xsContact.uniqueID = uniqueId;
         } else {
             // create a XSContact with uniqueId data
-            NSLog(@"Creating a contact with skypeName %@: Start", skypeName);
             AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
             NSManagedObjectContext *moc = appDelegate.managedObjectContext;            
             [XSContact xsContactWithSkypeName:skypeName addressBookUniqueId:uniqueId context:moc];
-            NSLog(@"Creating a contact with skypeName %@: End", skypeName);
         }        
-        NSLog(@"Processing skypeName %@: End", skypeName);
 	}
      
     // save AddressBook changes
@@ -152,28 +144,11 @@
     // release delegate method
     self.skypeContacts.delegate = nil;        
     self.loading = NO;
-    //    [skypeNamesDictionary release];
-    NSLog(@"contactsAvailable: End");
 }
 
 #pragma mark -
 #pragma mark Private Methods
 -(XSContact *) contactWithSkypeName:(NSString *)skypeName {
-    /*
-    if (!skypeNamesDictionary) {        
-        NSLog(@"Creating skypeNamesDictionary: Begin");
-        NSArray *objects = [self.contactsArrayController arrangedObjects];
-        NSArray *keys = [objects valueForKey:@"skypeName"];
-        skypeNamesDictionary = [[NSDictionary dictionaryWithObjects:objects forKeys:keys] retain];
-        NSLog(@"skypeNamesDictionary: %@", skypeNamesDictionary);
-        NSLog(@"Creating skypeNamesDictionary: End");
-    }
-
-    return [skypeNamesDictionary valueForKey:skypeName];
-     */
-
-    // TODO fetch all contacts in a NSDictionary and look at that dictionary
-    // This should improve fetch time down to #contacts
     NSArray *contacts = [self.contactsArrayController arrangedObjects];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.skypeName == %@", skypeName];
     NSArray *filteredArray = [contacts filteredArrayUsingPredicate:predicate];
