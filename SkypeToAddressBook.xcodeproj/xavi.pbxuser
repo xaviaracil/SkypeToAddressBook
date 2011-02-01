@@ -64,8 +64,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317338483;
-			PBXWorkspaceStateSaveDate = 317338483;
+			PBXPerProjectTemplateStateSaveDate = 317943903;
+			PBXWorkspaceStateSaveDate = 317943903;
 		};
 		perUserProjectItems = {
 			474A12B6123982A500FC0E45 /* XDModelBookmark */ = 474A12B6123982A500FC0E45 /* XDModelBookmark */;
@@ -73,11 +73,11 @@
 			474A12B8123982A500FC0E45 /* PBXTextBookmark */ = 474A12B8123982A500FC0E45 /* PBXTextBookmark */;
 			474A12B9123982A500FC0E45 /* PBXTextBookmark */ = 474A12B9123982A500FC0E45 /* PBXTextBookmark */;
 			474A12BA123982A500FC0E45 /* PBXTextBookmark */ = 474A12BA123982A500FC0E45 /* PBXTextBookmark */;
-			474E042712EA373600609650 /* PBXBookmark */ = 474E042712EA373600609650 /* PBXBookmark */;
 			474E044C12EA3A8500609650 /* PBXBookmark */ = 474E044C12EA3A8500609650 /* PBXBookmark */;
 			4753D61112EA2A1C00D03CB9 /* PBXTextBookmark */ = 4753D61112EA2A1C00D03CB9 /* PBXTextBookmark */;
 			4753D61212EA2A1C00D03CB9 /* PBXTextBookmark */ = 4753D61212EA2A1C00D03CB9 /* PBXTextBookmark */;
 			4753D61312EA2A1C00D03CB9 /* PlistBookmark */ = 4753D61312EA2A1C00D03CB9 /* PlistBookmark */;
+			4763EB9A12F37153003E6A23 /* PBXBookmark */ = 4763EB9A12F37153003E6A23 /* PBXBookmark */;
 			47790737121AA28300231138 /* PBXTextBookmark */ = 47790737121AA28300231138 /* PBXTextBookmark */;
 			477907E5121D438700231138 /* PBXTextBookmark */ = 477907E5121D438700231138 /* PBXTextBookmark */;
 			477907EC121D557500231138 /* PBXTextBookmark */ = 477907EC121D557500231138 /* PBXTextBookmark */;
@@ -138,10 +138,6 @@
 		vrLen = 1539;
 		vrLoc = 0;
 	};
-	474E042712EA373600609650 /* PBXBookmark */ = {
-		isa = PBXBookmark;
-		fRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */;
-	};
 	474E044C12EA3A8500609650 /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */;
@@ -176,6 +172,10 @@
 		name = "/Users/xavi/xaracSoft/Applications/SkypeToAddressBook/SkypeToAddressBook-Info.plist";
 		rLen = 0;
 		rLoc = 9223372036854775808;
+	};
+	4763EB9A12F37153003E6A23 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 477907D5121D389E00231138 /* SkypeToAddressBook.icns */;
 	};
 	47790737121AA28300231138 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
