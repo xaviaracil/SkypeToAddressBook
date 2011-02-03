@@ -110,9 +110,11 @@
 								<string key="NSToolbarItemPaletteLabel">Search</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSSearchField" key="NSToolbarItemView" id="518479194">
-									<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {150, 22}}</string>
+									<reference key="NSSuperview"/>
+									<reference key="NSNextKeyView"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSSearchFieldCell" key="NSCell" id="540066710">
 										<int key="NSCellFlags">343014976</int>
@@ -123,7 +125,7 @@
 											<double key="NSSize">13</double>
 											<int key="NSfFlags">1044</int>
 										</object>
-										<string key="NSPlaceholderString">Enter name</string>
+										<string key="NSPlaceholderString">Escribir nombre</string>
 										<reference key="NSControlView" ref="518479194"/>
 										<bool key="NSDrawsBackground">YES</bool>
 										<int key="NSTextBezelStyle">1</int>
@@ -410,13 +412,13 @@
 							<object class="NSTextFieldCell" key="NSCell" id="950185896">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">272760896</int>
-								<string key="NSContents">contacts</string>
+								<string key="NSContents">contactos</string>
 								<object class="NSFont" key="NSSupport" id="26">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">11</double>
 									<int key="NSfFlags">3100</int>
 								</object>
-								<string key="NSPlaceholderString">contacts</string>
+								<string key="NSPlaceholderString">contactos</string>
 								<reference key="NSControlView" ref="600185559"/>
 								<object class="NSColor" key="NSBackgroundColor" id="738824463">
 									<int key="NSColorSpace">6</int>
@@ -559,7 +561,7 @@
 											<object class="NSButtonCell" key="NSCell" id="3071157">
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">134217728</int>
-												<string key="NSContents">OK</string>
+												<string key="NSContents">Aceptar</string>
 												<reference key="NSSupport" ref="941979383"/>
 												<reference key="NSControlView" ref="64068358"/>
 												<int key="NSButtonFlags">-2038284033</int>
@@ -582,7 +584,7 @@
 											<object class="NSButtonCell" key="NSCell" id="175919072">
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">134217728</int>
-												<string key="NSContents">Cancel</string>
+												<string key="NSContents">Cancelar</string>
 												<reference key="NSSupport" ref="941979383"/>
 												<reference key="NSControlView" ref="487191880"/>
 												<int key="NSButtonFlags">-2038284033</int>
@@ -631,16 +633,16 @@
 										<object class="NSTextField" id="449602980">
 											<reference key="NSNextResponder" ref="930002855"/>
 											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{16, 387}, {256, 17}}</string>
+											<string key="NSFrame">{{16, 387}, {300, 17}}</string>
 											<reference key="NSSuperview" ref="930002855"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="805381143"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="705123082">
-												<int key="NSCellFlags">68288064</int>
-												<int key="NSCellFlags2">272630784</int>
-												<string key="NSContents">Select a contact for</string>
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">272631808</int>
+												<string key="NSContents">Seleccionar un contacto para</string>
 												<reference key="NSSupport" ref="941979383"/>
 												<reference key="NSControlView" ref="449602980"/>
 												<reference key="NSBackgroundColor" ref="738824463"/>
@@ -664,7 +666,7 @@
 							<object class="NSTextFieldCell" key="NSTitleCell">
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">0</int>
-								<string key="NSContents">Select contact for</string>
+								<string key="NSContents">Seleccionar un contacto para</string>
 								<reference key="NSSupport" ref="26"/>
 								<reference key="NSBackgroundColor" ref="537395907"/>
 								<object class="NSColor" key="NSTextColor">
@@ -822,26 +824,6 @@
 					<int key="connectionID">54</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternValue1: arrangedObjects.@count</string>
-						<reference key="source" ref="600185559"/>
-						<reference key="destination" ref="882799619"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="600185559"/>
-							<reference key="NSDestination" ref="882799619"/>
-							<string key="NSLabel">displayPatternValue1: arrangedObjects.@count</string>
-							<string key="NSBinding">displayPatternValue1</string>
-							<string key="NSKeyPath">arrangedObjects.@count</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSDisplayPattern</string>
-								<string key="NS.object.0">%{value1}@ contacts</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">55</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">peoplePicker</string>
 						<reference key="source" ref="1001"/>
@@ -882,46 +864,6 @@
 					<int key="connectionID">83</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternTitle1: selection.skypeName</string>
-						<reference key="source" ref="792537209"/>
-						<reference key="destination" ref="882799619"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="792537209"/>
-							<reference key="NSDestination" ref="882799619"/>
-							<string key="NSLabel">displayPatternTitle1: selection.skypeName</string>
-							<string key="NSBinding">displayPatternTitle1</string>
-							<string key="NSKeyPath">selection.skypeName</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSDisplayPattern</string>
-								<string key="NS.object.0">Select a contact for %{title1}</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">85</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">displayPatternValue1: selection.skypeName</string>
-						<reference key="source" ref="449602980"/>
-						<reference key="destination" ref="882799619"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="449602980"/>
-							<reference key="NSDestination" ref="882799619"/>
-							<string key="NSLabel">displayPatternValue1: selection.skypeName</string>
-							<string key="NSBinding">displayPatternValue1</string>
-							<string key="NSKeyPath">selection.skypeName</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSDisplayPattern</string>
-								<string key="NS.object.0">Select a contact for %{value1}@</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">88</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">setContact:</string>
 						<reference key="source" ref="1001"/>
@@ -936,6 +878,42 @@
 						<reference key="destination" ref="487191880"/>
 					</object>
 					<int key="connectionID">90</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">sortDescriptors: sortDescriptors</string>
+						<reference key="source" ref="882799619"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="882799619"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">sortDescriptors: sortDescriptors</string>
+							<string key="NSBinding">sortDescriptors</string>
+							<string key="NSKeyPath">sortDescriptors</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">97</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternValue1: arrangedObjects.@count</string>
+						<reference key="source" ref="600185559"/>
+						<reference key="destination" ref="882799619"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="600185559"/>
+							<reference key="NSDestination" ref="882799619"/>
+							<string key="NSLabel">displayPatternValue1: arrangedObjects.@count</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">arrangedObjects.@count</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">%{value1}@ contactos</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">98</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -957,30 +935,54 @@
 								</object>
 								<object class="NSMutableArray" key="dict.values">
 									<bool key="EncodedWithXMLCoder">YES</bool>
-									<string>Name</string>
+									<string>Nombre</string>
 									<string>name contains[C] $value</string>
 								</object>
 							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">92</int>
+					<int key="connectionID">100</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">sortDescriptors: sortDescriptors</string>
-						<reference key="source" ref="882799619"/>
-						<reference key="destination" ref="1001"/>
+						<string key="label">displayPatternValue1: selection.skypeName</string>
+						<reference key="source" ref="449602980"/>
+						<reference key="destination" ref="882799619"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="882799619"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">sortDescriptors: sortDescriptors</string>
-							<string key="NSBinding">sortDescriptors</string>
-							<string key="NSKeyPath">sortDescriptors</string>
+							<reference key="NSSource" ref="449602980"/>
+							<reference key="NSDestination" ref="882799619"/>
+							<string key="NSLabel">displayPatternValue1: selection.skypeName</string>
+							<string key="NSBinding">displayPatternValue1</string>
+							<string key="NSKeyPath">selection.skypeName</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">Seleccionar un contacto para %{value1}@</string>
+							</object>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">97</int>
+					<int key="connectionID">101</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">displayPatternTitle1: selection.skypeName</string>
+						<reference key="source" ref="792537209"/>
+						<reference key="destination" ref="882799619"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="792537209"/>
+							<reference key="NSDestination" ref="882799619"/>
+							<string key="NSLabel">displayPatternTitle1: selection.skypeName</string>
+							<string key="NSBinding">displayPatternTitle1</string>
+							<string key="NSKeyPath">selection.skypeName</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSDisplayPattern</string>
+								<string key="NS.object.0">Seleccionar contacto para %{title1}</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">102</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1343,7 +1345,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">97</int>
+			<int key="maxID">102</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

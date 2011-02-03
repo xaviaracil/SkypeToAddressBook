@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  SkypeToAddressBook
+
+  Created by Xavi Aracil on 01/02/11.
+  Copyright 2011 Xavi Aracil Diaz. All rights reserved.
+*/
+
+/* Contact deletion confirmation message*/
+"OK" = "Aceptar";
+"Cancel" = "Cancelar";
+"delete message" = "¿Desconnectar el contacto %@ del usuario de skype %@?";
+"Disconnected contacts cannot be restored." = "Los contactos desconectados no se pueden restaurar.";
+
+/* Plugin panel */
+"Visit" = "Visitar…";
+"Visit Plugin Site" = "Visitar el sitio web del plugin de la Agenda";
+"Visit Plugin Site Description" = "SkypeToAddressBook trabaja con un plugin de la Agenda para llamar a los contactos de Skype directamente des de la propia Agenda. Haga click en Visitar para ir al sitio web del plugin para instalarlo.";
