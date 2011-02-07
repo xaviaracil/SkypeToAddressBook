@@ -23,13 +23,15 @@
     NSScrollView *scrollView;
     
     NSArray *sortDescriptors;
-    //    NSDictionary *skypeNamesDictionary;
     
     // animating
     NSArray *animationArray;
     NSRect currentContactFrame;
     NSImageView *selectedContactImageView;
     SEL animationDidEndSelector;
+	
+	// plugin related
+	NSView *pluginDialogView;
 }
 
 @property (nonatomic, retain) IBOutlet NSArrayController *contactsArrayController;
@@ -44,6 +46,8 @@
 // animation
 @property (nonatomic, retain) NSArray *animationArray;
 @property (nonatomic, retain) NSImageView *selectedContactImageView;
+// plugin related
+@property (retain) IBOutlet NSView *pluginDialogView;
 
 
 - (void) contactsAvailable:(NSArray *) contacts;

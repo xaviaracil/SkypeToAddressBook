@@ -17,24 +17,35 @@
 @synthesize window;
 @synthesize mainWindowController;
 @synthesize abContactsArray;
+@synthesize pluginInstalled;
 
-/*
-- (void) showPeoplePicker:(XSContact *)contact {
-    XSMainWindow *windowController = self.mainWindowController;
-    [windowController showPeoplePicker:contact];
-}
-- (void) showPeoplePicker:(XSContact *)contact initialFrame:(NSRect) frame {
-    XSMainWindow *windowController = self.mainWindowController;
-    [windowController showPeoplePicker:contact initialFrame:frame];    
-}
-*/
 - (void) showPeoplePicker:(XSContact *)contact fromView:(NSView *) view {
     XSMainWindow *windowController = self.mainWindowController;
     [windowController showPeoplePicker:contact fromView:view];    
 }
 
 - (IBAction)openWebsite:(id)sender {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.xadsolutions.com/products/skypetoaddressbook/"]];
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kXSMainWebsiteURL]];
+}
+
+- (IBAction)openPluginWebsite:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:kXSABPluginWebsiteURL]];
+}
+
+- (void) lookForPluginInWorkspace {
+	pluginInstalled = NO;
+	
+	NSFileManager *fileManager = [[NSFileManager alloc] init];
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSAllDomainsMask, YES);
+	
+	for (NSString *path in paths) {
+		NSString *pluginPath = [[path stringByAppendingPathComponent:kXSABPluginsDirectory] 
+								stringByAppendingPathComponent:kXSABPluginName];
+		pluginInstalled = pluginInstalled || [fileManager fileExistsAtPath:pluginPath];
+	}
+	
+	[fileManager release];
 }
 
 -(BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
@@ -49,6 +60,9 @@
 		[ABPerson addPropertiesAndTypes:dict];
 	}
 
+	// register user defaults
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"showPluginPanel"]];
 	// Load contacts from addressBook
 	ABAddressBook *addressBook = [ABAddressBook sharedAddressBook];
 	NSArray *people = [addressBook people];
@@ -78,10 +92,16 @@
 	self.abContactsArray = abContacts;
 	[abContacts release];
 		
+	// look for plugin
+	[self lookForPluginInWorkspace];
+
+	
+	// show window
 	XSMainWindow *windowController = [[XSMainWindow alloc] initWithWindowNibName:@"XSMainWindow"];
 	[windowController showWindow:nil];
 	self.mainWindowController = windowController;
 	[windowController release];
+	
 
 }
 /**

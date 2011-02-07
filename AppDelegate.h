@@ -9,6 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "XSContact.h"
 
+#define kXSMainWebsiteURL @"http://www.xadsolutions.com/skypetoaddressbook/"
+#define kXSABPluginWebsiteURL @"http://www.xadsolutions.com/skypetoaddressbook/skypetoaddressbook-addressbook-plugin/"
+#define kXSABPluginsDirectory @"Address Book Plug-Ins"
+#define kXSABPluginName @"XSSkypePlugin.bundle"
+
 @class XSMainWindow;
 
 @interface AppDelegate : NSObject 
@@ -22,6 +27,8 @@
 	
 	// AddressBook Contacts array
 	NSArray *abContactsArray;
+	
+	BOOL pluginInstalled;
 }
 
 @property (nonatomic, retain) IBOutlet NSWindow *window;
@@ -34,10 +41,10 @@
 
 // AddressBook Contacts array
 @property (nonatomic, retain) NSArray *abContactsArray;
+@property (nonatomic, assign) BOOL pluginInstalled;
 
 - (IBAction)saveAction:sender;
-//- (void) showPeoplePicker:(XSContact *)contact;
-//- (void) showPeoplePicker:(XSContact *)contact initialFrame:(NSRect) frame;
-- (void) showPeoplePicker:(XSContact *)contact fromView:(NSView *) view;
+- (void)showPeoplePicker:(XSContact *)contact fromView:(NSView *) view;
 - (IBAction)openWebsite:(id)sender;
+- (IBAction)openPluginWebsite:(id)sender;
 @end

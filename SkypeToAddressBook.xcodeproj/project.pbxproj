@@ -24,6 +24,7 @@
 		47B6669012F8B35C00FFB2F7 /* XSMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47B6669212F8B35C00FFB2F7 /* XSMainWindow.xib */; };
 		47F07EF612197DA0000247AD /* XSContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F07EF512197DA0000247AD /* XSContact.m */; };
 		47F07F0812197FB0000247AD /* XSMainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F07F0712197FB0000247AD /* XSMainWindow.m */; };
+		47FE831D12FB4AF6008EC579 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 47FE831C12FB4AF6008EC579 /* Credits.html */; };
 		770B37ED0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */; };
 		77C8280E06725ACE000B614F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* AppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -69,6 +70,7 @@
 		477907D5121D389E00231138 /* SkypeToAddressBook.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = SkypeToAddressBook.icns; sourceTree = "<group>"; };
 		477907E9121D49F000231138 /* XSABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSABContact.h; sourceTree = "<group>"; };
 		477907EA121D49F000231138 /* XSABContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSABContact.m; sourceTree = "<group>"; };
+		477F2BF91300886000D4A1A8 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		47B6667712F8A96400FFB2F7 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/ca.lproj/MainMenu.xib; sourceTree = "<absolute>"; };
 		47B6667812F8AB6E00FFB2F7 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/es.lproj/MainMenu.xib; sourceTree = "<absolute>"; };
 		47B6668012F8AF7800FFB2F7 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		47F07EF512197DA0000247AD /* XSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSContact.m; sourceTree = "<group>"; };
 		47F07F0612197FB0000247AD /* XSMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMainWindow.h; sourceTree = "<group>"; };
 		47F07F0712197FB0000247AD /* XSMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMainWindow.m; sourceTree = "<group>"; };
+		47FE831C12FB4AF6008EC579 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		770B37EC0679A11B001EADE2 /* SkypeToAddressBook_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = SkypeToAddressBook_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77C82804067257F0000B614F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		77C8280B06725ACE000B614F /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				477F2BF91300886000D4A1A8 /* README */,
+				47FE831C12FB4AF6008EC579 /* Credits.html */,
 				477907D5121D389E00231138 /* SkypeToAddressBook.icns */,
 				47790751121AA60300231138 /* PersonSquare.tif */,
 				8D1107310486CEB800E47090 /* SkypeToAddressBook-Info.plist */,
@@ -289,6 +294,7 @@
 				47790752121AA60300231138 /* PersonSquare.tif in Resources */,
 				477907D6121D389E00231138 /* SkypeToAddressBook.icns in Resources */,
 				47B6667F12F8AF7800FFB2F7 /* Localizable.strings in Resources */,
+				47FE831D12FB4AF6008EC579 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

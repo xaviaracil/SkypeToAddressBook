@@ -20,7 +20,7 @@
 -(void) deleteOldContacts:(NSArray *) currentContacts;
 -(void) recordChanged:(NSNotification*)notification;
 -(void) setContactAnimationDidEnd;
-
+-(void) showPluginDialog;
 @end
 
 @implementation XSMainWindow
@@ -34,6 +34,7 @@
 @synthesize peoplePickerImageView;
 @synthesize scrollView;
 @synthesize sortDescriptors;
+@synthesize pluginDialogView;
 
 // private ivars
 @synthesize abDictionary;
@@ -60,6 +61,9 @@
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     NSArray *sortArray = [NSArray arrayWithObject:sort];
     self.sortDescriptors = sortArray;
+	
+	// check for plugin, displaying an alert
+	[self showPluginDialog];
 }
 
 - (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view {
@@ -207,4 +211,27 @@
     // save AddressBook changes
     [[ABAddressBook sharedAddressBook] save];
 }
+
+-(void) showPluginDialog {
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	AppDelegate *appDelegate = (AppDelegate *) [[NSApplication sharedApplication] delegate];
+
+	if ([userDefaults boolForKey:@"showPluginPanel"] && !appDelegate.pluginInstalled) {
+		NSAlert *alert = [[NSAlert alloc] init];
+		[alert addButtonWithTitle:NSLocalizedString(@"Visit", @"OK")];
+		[alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel")];
+		[alert setMessageText:NSLocalizedString(@"Visit Plugin Site", @"Visit Plugin Site")];
+		[alert setInformativeText:NSLocalizedString(@"Visit Plugin Site Description", @"Visit Plugin Site Description")];
+		[alert setAlertStyle:NSInformationalAlertStyle];
+		[alert setShowsSuppressionButton:YES]; // Suppression button: show it
+		NSInteger result = [alert runModal];
+		if ( result == NSAlertFirstButtonReturn ){
+			// "Visit" pressed
+			[appDelegate openPluginWebsite:self];			
+		}
+		
+		[userDefaults setBool:(BOOL)![[alert suppressionButton] state] forKey:@"showPluginPanel"];
+	} 
+}
+
 @end
