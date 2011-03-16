@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		2F7446990DB6B7EA00F9684A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* MainMenu.xib */; };
 		470FB736129D1BCD00D7BB70 /* XSMainWindow-animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 470FB735129D1BCD00D7BB70 /* XSMainWindow-animation.m */; };
+		475244DB13170917000FD37B /* connectingToSkype.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 475244DD13170917000FD37B /* connectingToSkype.rtfd */; };
 		476D440012998D2C009F58CC /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476D43FF12998D2C009F58CC /* Quartz.framework */; };
+		4773D2D113167394002EAFCF /* skypeHelp.rtfd in Resources */ = {isa = PBXBuildFile; fileRef = 4773D2CF13167394002EAFCF /* skypeHelp.rtfd */; };
 		4779070C1219D35800231138 /* XSContact.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4779070B1219D35800231138 /* XSContact.xib */; };
 		4779071B121AA25500231138 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4779071A121AA25500231138 /* AddressBook.framework */; };
 		47790752121AA60300231138 /* PersonSquare.tif in Resources */ = {isa = PBXBuildFile; fileRef = 47790751121AA60300231138 /* PersonSquare.tif */; };
@@ -56,7 +58,19 @@
 		32CA4F630368D1EE00C91783 /* SkypeToAddressBook_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkypeToAddressBook_Prefix.pch; sourceTree = "<group>"; };
 		470FB734129D1BCD00D7BB70 /* XSMainWindow-animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XSMainWindow-animation.h"; sourceTree = "<group>"; };
 		470FB735129D1BCD00D7BB70 /* XSMainWindow-animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XSMainWindow-animation.m"; sourceTree = "<group>"; };
+		474629EC1315C0FA00D2D691 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		474629ED1315C0FB00D2D691 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		474629EE1315C12F00D2D691 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = ca.lproj/XSMainWindow.xib; sourceTree = "<group>"; };
+		474629EF1315C13000D2D691 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = es.lproj/XSMainWindow.xib; sourceTree = "<group>"; };
+		474629F01315C14400D2D691 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
+		474629F11315C14400D2D691 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		475244D91317073E000FD37B /* ca */ = {isa = PBXFileReference; lastKnownFileType = file; name = ca; path = ca.lproj/skypeHelp.rtfd; sourceTree = "<group>"; };
+		475244DA131707E8000FD37B /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/skypeHelp.rtfd; sourceTree = "<group>"; };
+		475244DC13170917000FD37B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = English; path = English.lproj/connectingToSkype.rtfd; sourceTree = "<group>"; };
+		475244DE13170920000FD37B /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/connectingToSkype.rtfd; sourceTree = "<group>"; };
+		475244DF13170920000FD37B /* ca */ = {isa = PBXFileReference; lastKnownFileType = file; name = ca; path = ca.lproj/connectingToSkype.rtfd; sourceTree = "<group>"; };
 		476D43FF12998D2C009F58CC /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		4773D2D013167394002EAFCF /* es */ = {isa = PBXFileReference; lastKnownFileType = wrapper.rtfd; name = es; path = es.lproj/skypeHelp.rtfd; sourceTree = "<group>"; };
 		4779070B1219D35800231138 /* XSContact.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XSContact.xib; sourceTree = "<group>"; };
 		4779071A121AA25500231138 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		47790751121AA60300231138 /* PersonSquare.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = PersonSquare.tif; sourceTree = "<group>"; };
@@ -71,14 +85,8 @@
 		477907E9121D49F000231138 /* XSABContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSABContact.h; sourceTree = "<group>"; };
 		477907EA121D49F000231138 /* XSABContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSABContact.m; sourceTree = "<group>"; };
 		477F2BF91300886000D4A1A8 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		47B6667712F8A96400FFB2F7 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/ca.lproj/MainMenu.xib; sourceTree = "<absolute>"; };
-		47B6667812F8AB6E00FFB2F7 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/es.lproj/MainMenu.xib; sourceTree = "<absolute>"; };
 		47B6668012F8AF7800FFB2F7 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
-		47B6668212F8AF8D00FFB2F7 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/ca.lproj/Localizable.strings; sourceTree = "<absolute>"; };
-		47B6668312F8AF8F00FFB2F7 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/es.lproj/Localizable.strings; sourceTree = "<absolute>"; };
 		47B6669112F8B35C00FFB2F7 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/XSMainWindow.xib; sourceTree = "<group>"; };
-		47B6669312F8B37000FFB2F7 /* es */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = es; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/es.lproj/XSMainWindow.xib; sourceTree = "<absolute>"; };
-		47B6669412F8B37000FFB2F7 /* ca */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ca; path = /Users/xavi/xaracSoft/Applications/SkypeToAddressBook/ca.lproj/XSMainWindow.xib; sourceTree = "<absolute>"; };
 		47F07EF412197DA0000247AD /* XSContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSContact.h; sourceTree = "<group>"; };
 		47F07EF512197DA0000247AD /* XSContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSContact.m; sourceTree = "<group>"; };
 		47F07F0612197FB0000247AD /* XSMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMainWindow.h; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				475244DD13170917000FD37B /* connectingToSkype.rtfd */,
+				4773D2CF13167394002EAFCF /* skypeHelp.rtfd */,
 				477F2BF91300886000D4A1A8 /* README */,
 				47FE831C12FB4AF6008EC579 /* Credits.html */,
 				477907D5121D389E00231138 /* SkypeToAddressBook.icns */,
@@ -272,6 +282,7 @@
 				German,
 				ca,
 				es,
+				en,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* SkypeToAddressBook */;
 			projectDirPath = "";
@@ -295,6 +306,8 @@
 				477907D6121D389E00231138 /* SkypeToAddressBook.icns in Resources */,
 				47B6667F12F8AF7800FFB2F7 /* Localizable.strings in Resources */,
 				47FE831D12FB4AF6008EC579 /* Credits.html in Resources */,
+				4773D2D113167394002EAFCF /* skypeHelp.rtfd in Resources */,
+				475244DB13170917000FD37B /* connectingToSkype.rtfd in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,18 +346,38 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F7446980DB6B7EA00F9684A /* English */,
-				47B6667712F8A96400FFB2F7 /* ca */,
-				47B6667812F8AB6E00FFB2F7 /* es */,
+				474629EC1315C0FA00D2D691 /* ca */,
+				474629ED1315C0FB00D2D691 /* es */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		475244DD13170917000FD37B /* connectingToSkype.rtfd */ = {
+			isa = PBXVariantGroup;
+			children = (
+				475244DC13170917000FD37B /* English */,
+				475244DE13170920000FD37B /* es */,
+				475244DF13170920000FD37B /* ca */,
+			);
+			name = connectingToSkype.rtfd;
+			sourceTree = "<group>";
+		};
+		4773D2CF13167394002EAFCF /* skypeHelp.rtfd */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4773D2D013167394002EAFCF /* es */,
+				475244D91317073E000FD37B /* ca */,
+				475244DA131707E8000FD37B /* en */,
+			);
+			name = skypeHelp.rtfd;
 			sourceTree = "<group>";
 		};
 		47B6668112F8AF7800FFB2F7 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				47B6668012F8AF7800FFB2F7 /* English */,
-				47B6668212F8AF8D00FFB2F7 /* ca */,
-				47B6668312F8AF8F00FFB2F7 /* es */,
+				474629F01315C14400D2D691 /* ca */,
+				474629F11315C14400D2D691 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -353,8 +386,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				47B6669112F8B35C00FFB2F7 /* English */,
-				47B6669312F8B37000FFB2F7 /* es */,
-				47B6669412F8B37000FFB2F7 /* ca */,
+				474629EE1315C12F00D2D691 /* ca */,
+				474629EF1315C13000D2D691 /* es */,
 			);
 			name = XSMainWindow.xib;
 			sourceTree = "<group>";

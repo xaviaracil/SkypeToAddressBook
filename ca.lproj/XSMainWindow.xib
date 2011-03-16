@@ -3,7 +3,7 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10J567</string>
-		<string key="IBDocument.InterfaceBuilderVersion">1278</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
 		<string key="IBDocument.AppKitVersion">1038.35</string>
 		<string key="IBDocument.HIToolboxVersion">462.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
@@ -15,8 +15,8 @@
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>25</string>
-				<string>1278</string>
+				<string>30</string>
+				<string>1305</string>
 			</object>
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
@@ -110,11 +110,9 @@
 								<string key="NSToolbarItemPaletteLabel">Search</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSSearchField" key="NSToolbarItemView" id="518479194">
-									<reference key="NSNextResponder"/>
+									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {150, 22}}</string>
-									<reference key="NSSuperview"/>
-									<reference key="NSNextKeyView"/>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSSearchFieldCell" key="NSCell" id="540066710">
 										<int key="NSCellFlags">343014976</int>
@@ -555,7 +553,7 @@
 											<string key="NSFrame">{{626, 7}, {96, 32}}</string>
 											<reference key="NSSuperview" ref="930002855"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="600185559"/>
+											<reference key="NSNextKeyView" ref="1072243265"/>
 											<int key="NSViewLayerContentsRedrawPolicy">2</int>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSButtonCell" key="NSCell" id="3071157">
@@ -681,6 +679,29 @@
 							<bool key="NSTransparent">NO</bool>
 							<reference key="NSBorderColor2" ref="883545110"/>
 							<reference key="NSFillColor2" ref="883545110"/>
+						</object>
+						<object class="NSTextField" id="1072243265">
+							<reference key="NSNextResponder" ref="1006"/>
+							<int key="NSvFlags">266</int>
+							<string key="NSFrame">{{150, 175}, {450, 150}}</string>
+							<reference key="NSSuperview" ref="1006"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="600185559"/>
+							<int key="NSViewLayerContentsRedrawPolicy">2</int>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSTextFieldCell" key="NSCell" id="537237686">
+								<int key="NSCellFlags">71433728</int>
+								<int key="NSCellFlags2">138412032</int>
+								<string key="NSContents">Status Label</string>
+								<object class="NSFont" key="NSSupport">
+									<string key="NSName">LucidaGrande</string>
+									<double key="NSSize">24</double>
+									<int key="NSfFlags">16</int>
+								</object>
+								<reference key="NSControlView" ref="1072243265"/>
+								<reference key="NSBackgroundColor" ref="738824463"/>
+								<reference key="NSTextColor" ref="998856904"/>
+							</object>
 						</object>
 					</object>
 					<string key="NSFrame">{{7, 11}, {731, 450}}</string>
@@ -984,6 +1005,30 @@
 					</object>
 					<int key="connectionID">100</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: statusText</string>
+						<reference key="source" ref="1072243265"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1072243265"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: statusText</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">statusText</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">104</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">statusLabel</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="1072243265"/>
+					</object>
+					<int key="connectionID">105</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1031,6 +1076,7 @@
 							<reference ref="636982254"/>
 							<reference ref="351645139"/>
 							<reference ref="792537209"/>
+							<reference ref="1072243265"/>
 						</object>
 						<reference key="parent" ref="1005"/>
 					</object>
@@ -1240,6 +1286,21 @@
 						<reference key="object" ref="705123082"/>
 						<reference key="parent" ref="449602980"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">101</int>
+						<reference key="object" ref="1072243265"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="537237686"/>
+						</object>
+						<reference key="parent" ref="1006"/>
+						<string key="objectName">StaticText - Label</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">102</int>
+						<reference key="object" ref="537237686"/>
+						<reference key="parent" ref="1072243265"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1252,6 +1313,8 @@
 					<string>1.NSWindowTemplate.visibleAtLaunch</string>
 					<string>1.WindowOrigin</string>
 					<string>1.editorWindowContentRectSynchronizationRect</string>
+					<string>101.IBPluginDependency</string>
+					<string>102.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>21.IBEditorWindowLastContentRect</string>
 					<string>21.IBPluginDependency</string>
@@ -1294,6 +1357,8 @@
 					<integer value="1"/>
 					<string>{196, 240}</string>
 					<string>{{202, 428}, {480, 270}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{105, 706}, {617, 0}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1345,7 +1410,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">100</int>
+			<int key="maxID">105</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1413,7 +1478,9 @@
 							<string>peoplePicker</string>
 							<string>peoplePickerImageView</string>
 							<string>peoplePickerView</string>
+							<string>pluginDialogView</string>
 							<string>scrollView</string>
+							<string>statusLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1422,7 +1489,9 @@
 							<string>ABPeoplePickerView</string>
 							<string>NSImageView</string>
 							<string>NSView</string>
+							<string>NSView</string>
 							<string>NSScrollView</string>
+							<string>NSTextField</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1434,7 +1503,9 @@
 							<string>peoplePicker</string>
 							<string>peoplePickerImageView</string>
 							<string>peoplePickerView</string>
+							<string>pluginDialogView</string>
 							<string>scrollView</string>
+							<string>statusLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -1459,8 +1530,16 @@
 								<string key="candidateClassName">NSView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">pluginDialogView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">scrollView</string>
 								<string key="candidateClassName">NSScrollView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">statusLabel</string>
+								<string key="candidateClassName">NSTextField</string>
 							</object>
 						</object>
 					</object>

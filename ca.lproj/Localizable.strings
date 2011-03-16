@@ -16,3 +16,8 @@
 "Visit" = "Visita…";
 "Visit Plugin Site" = "Visita el lloc web del plugin de l'Agenda";
 "Visit Plugin Site Description" = "SkypeToAddressBook treball amb un plugin de l'Agenda per trucar als contactes de Skype directament des de l'Agenda. Feu clic a Visita per anar al lloc web del plugin per instal·lar-l'ho.";
+
+/* General */
+"Loading contacts" = "Carregant contactes de Skype. Pot trigar una mica";
+"Error loading contacts" = "No s'ha pogut carregar els contactes de Skype. O Skype no està instal·lat o no ha permés a SkypeToAddressBook l'accés als contactes de Skype";
+"No Skype contacts" = "No tens cap contacte a Skype. Afegeix contactes a Skype i torna a carregar SkypeToAddressBook";

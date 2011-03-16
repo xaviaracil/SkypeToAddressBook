@@ -20,8 +20,8 @@
     XSSkype *skypeProxy = [[XSSkype alloc] initWithAppName:@"SkypeToAddressBook"];	
     skypeProxy.delegate = self;
     self.skype = skypeProxy;
-    [skypeProxy release];
     [skype connect];
+    [skypeProxy release];
 }
 
 - (void)dealloc {

@@ -35,6 +35,8 @@
 @synthesize scrollView;
 @synthesize sortDescriptors;
 @synthesize pluginDialogView;
+@synthesize statusLabel;
+@synthesize statusText;
 
 // private ivars
 @synthesize abDictionary;
@@ -50,6 +52,9 @@
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	self.abDictionary = dictionary;
 	
+    [statusLabel setHidden:NO];
+    self.statusText = NSLocalizedString(@"Loading contacts", @"loading contacts");
+    
 	XSSkypeContact *xsSkypeContacts = [[XSSkypeContact alloc] init];
 	self.skypeContacts = xsSkypeContacts;
 	self.loading = YES;
@@ -147,6 +152,16 @@
     
     // release delegate method
     self.skypeContacts.delegate = nil;        
+    self.loading = NO;
+    
+    [statusLabel setHidden:[contacts count] > 0];
+    self.statusText = NSLocalizedString(@"No Skype contacts", @"No Skype contacts");
+
+}
+
+- (void) skypeFailToFetchContacts {
+    self.statusText = NSLocalizedString(@"Error loading contacts", @"Error loading contacts");
+    [self deleteOldContacts:[NSArray array]];
     self.loading = NO;
 }
 

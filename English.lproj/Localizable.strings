@@ -16,3 +16,8 @@
 "Visit" = "Visit…";
 "Visit Plugin Site" = "Visit AddressBook Plugin Site";
 "Visit Plugin Site Description" = "SkypeToAddressBook fits with an AddressBook plugin for callin skype contacts directly from AdressBook. Click on Visit to visit plugin' site for installing it.";
+
+/* General */
+"Loading contacts" = "Loading Skype contacts. This may take a while";
+"Error loading contacts" = "There were an error loading Skype contacts. Either Skype is not present or you didn't allowed SkypeToAddressBook to access Skype's contacts.";
+"No Skype contacts" = "You don't have any contact in Skype. Please add contacts to Skype and relaunch SkypeToAddressBook";

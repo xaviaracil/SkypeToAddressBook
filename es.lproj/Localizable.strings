@@ -16,3 +16,8 @@
 "Visit" = "Visitar…";
 "Visit Plugin Site" = "Visitar el sitio web del plugin de la Agenda";
 "Visit Plugin Site Description" = "SkypeToAddressBook trabaja con un plugin de la Agenda para llamar a los contactos de Skype directamente des de la propia Agenda. Haga click en Visitar para ir al sitio web del plugin para instalarlo.";
+
+/* General */
+"Loading contacts" = "Cargando contactos de Skype. Puede tardar un poco";
+"Error loading contacts" = "No s'ha pogut carregar els contactes de Skype. O Skype no està instal·lat o no ha permés a SkypeToAddressBook l'accés als contactes de Skype";
+"No Skype contacts" = "No tiene ningún contacto en Skype. Añada contactos a Skype y vuelva a abrir SkypeToAddressBook";

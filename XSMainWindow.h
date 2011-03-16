@@ -32,6 +32,10 @@
 	
 	// plugin related
 	NSView *pluginDialogView;
+
+    NSTextField *statusLabel;
+    NSString *statusText;
+    
 }
 
 @property (nonatomic, retain) IBOutlet NSArrayController *contactsArrayController;
@@ -49,10 +53,12 @@
 // plugin related
 @property (retain) IBOutlet NSView *pluginDialogView;
 
+@property (assign) IBOutlet NSTextField *statusLabel;
+@property (nonatomic, copy) NSString *statusText;
+
 
 - (void) contactsAvailable:(NSArray *) contacts;
-//- (void) showPeoplePicker:(XSContact *) contact;
-//- (void) showPeoplePicker:(XSContact *) contact initialFrame:(NSRect ) frame;
+- (void) skypeFailToFetchContacts;
 - (void) showPeoplePicker:(XSContact *) contact fromView:(NSView *) view;
 - (IBAction)setContact:(id)sender;
 - (IBAction)cancelContact:(id)sender;
