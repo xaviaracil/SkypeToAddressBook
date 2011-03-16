@@ -17,11 +17,11 @@
 	// load contacts from Skype
 	// -> SEARCH FRIENDS
 	// <- USERS tim, joe, mike
-	XSSkype *skypeProxy = [[XSSkype alloc] initWithAppName:@"SkypeToAddressBook"];	
+    XSSkype *skypeProxy = [[XSSkype alloc] initWithAppName:@"SkypeToAddressBook"];	
     skypeProxy.delegate = self;
     self.skype = skypeProxy;
-    [skype connect];
     [skypeProxy release];
+    [skype connect];
 }
 
 - (void)dealloc {
@@ -33,6 +33,12 @@
 #pragma mark XSSkypeDelegate methods
 -(void) skypeDidConnect {
 	[skype sendCommand:@"SEARCH FRIENDS" responder:self];	    
+}
+
+-(void) skypeDidFailConnect {
+    if ([delegate respondsToSelector:@selector(skypeFailToFetchContacts)]) {
+        [delegate performSelector:@selector(skypeFailToFetchContacts)];
+    }
 }
 
 #pragma mark -

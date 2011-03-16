@@ -21,7 +21,7 @@
 	
 	// setting delegate
 	[SkypeAPI setSkypeDelegate:self];
-
+    
 	// connecting
 	[SkypeAPI connect];
 }
@@ -55,7 +55,6 @@
     [SkypeAPI sendSkypeCommand: skypeCommand];	
 }
 
-
 # pragma mark Skype delegate methods
 - (NSString*)clientApplicationName {
 	return appName;
@@ -80,7 +79,12 @@
         if ([responder conformsToProtocol:@protocol(XSSkypeResponder)]) {
             [responder response:response];
         }
-	}	
+        /*
+            [SkypeAPI removeSkypeDelegate];
+            [SkypeAPI disconnect];
+            connected = NO;
+         */
+	}	 
 }
 
 // This method is called after Skype API client application has called connect. 
@@ -92,6 +96,9 @@
 			[delegate performSelector:@selector(skypeDidConnect)];
 		}
 	} else {
+        if ([delegate respondsToSelector:@selector(skypeDidFailConnect)]) {
+            [delegate performSelector:@selector(skypeDidFailConnect)];
+        }
 	}
 }
 
@@ -105,6 +112,7 @@
 // This method is called after Skype has quit.
 - (void)skypeBecameUnavailable:(NSNotification*)aNotification {
 	NSLog(@"skypeBecameUnavailable");
+    connected = NO;
 }
 
 @end

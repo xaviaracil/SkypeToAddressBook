@@ -14,6 +14,7 @@
 @protocol XSSkypeContactDelegate <NSObject>
 
 -(void) contactsAvailable:(NSArray *) contacts; 
+-(void) skypeFailToFetchContacts;
 
 @end
 

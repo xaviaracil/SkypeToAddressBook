@@ -12,6 +12,7 @@
 @protocol XSSkypeDelegate <NSObject>
 
 -(void) skypeDidConnect;
+-(void) skypeDidFailConnect;
 
 @end
 
