@@ -8,22 +8,56 @@
 
 #import "XSSkype.h"
 
+@interface XSSkype () 
+- (void) applicationLaunched:(NSNotification *) notification;
+- (void) internalConnect;
+@end
+
 @implementation XSSkype
 
 @synthesize appName, delegate, connected;
 
+- (void) applicationLaunched:(NSNotification *) notification
+{
+    NSDictionary *userInfo = [notification userInfo];
+    NSString *applicationLaunched = [userInfo valueForKey:@"NSApplicationName"];
+    if ([@"Skype" isEqualToString:applicationLaunched]) {
+        [self internalConnect];        
+    }
+}
 
-- (void) connect {
+- (void) internalConnect
+{
+    // setting delegate
+    [SkypeAPI setSkypeDelegate:self];
+    
+    // connecting
+    [SkypeAPI connect];
+
+}
+
+- (void) connect 
+{
 	// load Skype
 	if ([SkypeAPI isSkypeRunning] == NO) {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"skype://"]];
-	}
+        NSNotificationCenter *notCenter = [[NSWorkspace sharedWorkspace] notificationCenter];
+        [notCenter addObserver:self
+                      selector:@selector(applicationLaunched:)
+                          name:NSWorkspaceDidLaunchApplicationNotification 
+                        object:nil]; // Register for all notifications
+		
+        if (![[NSWorkspace sharedWorkspace] launchApplication:@"Skype"]){
+            if ([delegate respondsToSelector:@selector(skypeIsNotInstalled)]) {
+                [delegate performSelector:@selector(skypeIsNotInstalled)];
+            }
+            return;
+        };
+        
+        
+	} else {
+        [self internalConnect];
+    }
 	
-	// setting delegate
-	[SkypeAPI setSkypeDelegate:self];
-    
-	// connecting
-	[SkypeAPI connect];
 }
 
 - (id) initWithAppName:(NSString *) name

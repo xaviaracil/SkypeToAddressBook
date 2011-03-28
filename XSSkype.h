@@ -13,6 +13,7 @@
 
 -(void) skypeDidConnect;
 -(void) skypeDidFailConnect;
+-(void) skypeIsNotInstalled;
 
 @end
 

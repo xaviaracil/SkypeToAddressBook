@@ -15,7 +15,7 @@
 
 -(void) contactsAvailable:(NSArray *) contacts; 
 -(void) skypeFailToFetchContacts;
-
+-(void) skypeIsNotInstalled;
 @end
 
 @interface XSSkypeContact : NSObject<XSSkypeResponder, XSSkypeDelegate> {

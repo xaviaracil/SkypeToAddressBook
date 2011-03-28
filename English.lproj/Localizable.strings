@@ -19,5 +19,6 @@
 
 /* General */
 "Loading contacts" = "Loading Skype contacts. This may take a while";
-"Error loading contacts" = "There were an error loading Skype contacts. Either Skype is not present or you didn't allowed SkypeToAddressBook to access Skype's contacts.";
+"Error loading contacts" = "There were an error loading Skype contacts. Maybe You didn't allowed SkypeToAddressBook to access Skype's contacts.";
 "No Skype contacts" = "You don't have any contact in Skype. Please add contacts to Skype and relaunch SkypeToAddressBook";
+"Skype not installed" = "Skype is not installed. Please install Skype from http://www.skype.com and relaunch SkypeToAddressBook";

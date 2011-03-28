@@ -19,5 +19,6 @@
 
 /* General */
 "Loading contacts" = "Carregant contactes de Skype. Pot trigar una mica";
-"Error loading contacts" = "No s'ha pogut carregar els contactes de Skype. O Skype no està instal·lat o no ha permés a SkypeToAddressBook l'accés als contactes de Skype";
-"No Skype contacts" = "No tens cap contacte a Skype. Afegeix contactes a Skype i torna a carregar SkypeToAddressBook";
+"Error loading contacts" = "No s'ha pogut carregar els contactes de Skype. Segurament no ha permés a SkypeToAddressBook l'accés als contactes de Skype";
+"No Skype contacts" = "No tens cap contacte a Skype. Afegeix contactes a Skype i torna a obrir SkypeToAddressBook";
+"Skype not installed" = "Skype no està instal·lat. Instal·la-ho de http://www.skype.com i torni a obrir SkypeToAddressBook";

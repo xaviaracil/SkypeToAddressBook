@@ -142,7 +142,7 @@
 											<int key="NSColorSpace">6</int>
 											<string key="NSCatalogName">System</string>
 											<string key="NSColorName">controlTextColor</string>
-											<object class="NSColor" key="NSColor">
+											<object class="NSColor" key="NSColor" id="704948164">
 												<int key="NSColorSpace">3</int>
 												<bytes key="NSWhite">MAA</bytes>
 											</object>
@@ -689,6 +689,8 @@
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="600185559"/>
+							<bool key="NSViewIsLayerTreeHost">YES</bool>
+							<double key="NSViewAlphaValue">0.50000000000000011</double>
 							<int key="NSViewLayerContentsRedrawPolicy">2</int>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="559453649">
@@ -1409,6 +1411,10 @@
 					<string>1.editorWindowContentRectSynchronizationRect</string>
 					<string>100.IBPluginDependency</string>
 					<string>110.IBPluginDependency</string>
+					<string>110.IBViewIntegration.shadowBlurRadius</string>
+					<string>110.IBViewIntegration.shadowColor</string>
+					<string>110.IBViewIntegration.shadowOffsetHeight</string>
+					<string>110.IBViewIntegration.shadowOffsetWidth</string>
 					<string>111.IBPluginDependency</string>
 					<string>2.IBPluginDependency</string>
 					<string>21.IBEditorWindowLastContentRect</string>
@@ -1457,6 +1463,10 @@
 					<string>{{202, 428}, {480, 270}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<real value="0.0"/>
+					<reference ref="704948164"/>
+					<real value="1"/>
+					<real value="0.0"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{105, 706}, {617, 0}}</string>

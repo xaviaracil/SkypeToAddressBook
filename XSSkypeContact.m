@@ -41,6 +41,12 @@
     }
 }
 
+-(void) skypeIsNotInstalled {
+    if ([delegate respondsToSelector:@selector(skypeIsNotInstalled)]) {
+        [delegate performSelector:@selector(skypeIsNotInstalled)];
+    }    
+}
+
 #pragma mark -
 #pragma mark XSSkypeResponder methods
 -(void) response:(NSString *) response {

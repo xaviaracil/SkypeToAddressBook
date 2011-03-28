@@ -52,6 +52,7 @@
 	NSDictionary *dictionary = [NSDictionary dictionaryWithObjects:values forKeys:keys];
 	self.abDictionary = dictionary;
 	
+    [statusLabel layer].cornerRadius = 0.5;
     [statusLabel setHidden:NO];
     self.statusText = NSLocalizedString(@"Loading contacts", @"loading contacts");
     
@@ -117,6 +118,13 @@
 	[skypeContacts release];
 	[contactsArrayController release];
     [abDictionary release];
+    [statusLabel release];
+    [statusText release];
+    [pluginDialogView release];
+    [sortDescriptors release];
+    [scrollView release];
+    [selectedContactImageView release];
+    [animationArray release];
 	[super dealloc];
 }
 
@@ -163,6 +171,12 @@
     self.statusText = NSLocalizedString(@"Error loading contacts", @"Error loading contacts");
     [self deleteOldContacts:[NSArray array]];
     self.loading = NO;
+}
+
+-(void) skypeIsNotInstalled {
+    self.statusText = NSLocalizedString(@"Skype not installed", @"Skype not installed");
+    [self deleteOldContacts:[NSArray array]];
+    self.loading = NO;    
 }
 
 #pragma mark -
@@ -246,6 +260,7 @@
 		}
 		
 		[userDefaults setBool:(BOOL)![[alert suppressionButton] state] forKey:@"showPluginPanel"];
+        [alert release];
 	} 
 }
 
